@@ -1,13 +1,13 @@
 @supports (grid-area:auto){/*uses CSS Grid*/
   .site{
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /*divide screen into 5 equal columns*/
-    grid-template-rows: 50px 90px 90px 40px 300px 200px 200px 200px 200px;/*sets height of rows*/
+    grid-template-columns: 1fr 17% 1fr 1fr 13%;  /*divide screen into 5 equal columns*/
+    grid-template-rows: 50px 90px 180px 60px 300px 200px 200px 200px 200px;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
     'hd hd hd hd hd'/*heading*/
     'nvm nvm nvm nvm nvm'/*nav menu*/
     'nvd nvd nvd nvd nvd'/*dashboard nav*/
-    'nva nvap nvap nvap nvap'/*announements (and paragraph) nav*/
+    'nva nvap nvap nvap nvaa'/*announements (and paragraph) nav*/
     'sdt sdt maina maina maina'/*sidebar tasks and main announcements*/
     'sdr sdr maina maina maina'
     'sdr sdr mainc mainc mainc'/*sidebar recommendations and main contacts/customers*/
@@ -15,8 +15,15 @@
     'ft ft ft ft ft'/*footer section*/
   }
 
-/*section for mini*/
-.header-mini{/*establishes location in hd, color, outline color and style, text color*/
+  .main-box{
+    outline-style: double;
+    outline-width: thick;
+    outline-color: black;
+
+  }
+
+  /*section for mini*/
+  .header-mini{/*establishes location in hd, color, outline color and style, text color*/
     grid-area: hd;
     background:#2290e9;
     justify-content: flex-end;
@@ -24,23 +31,24 @@
     padding:.3%;
     padding-right: 8%;
 
-    }
-.mini-icons{
-  padding: 1%;
-  padding-left:.2%;
-}
 
-#mini{
-  font-size: 14px;
-  font-family: proxima-nova, sans-serif;
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  vertical-align: middle;
-  text-align: right;
-  padding-right: .4%;
-}
+  }
+  .mini-icons{
+    padding: 1%;
+    padding-left:.2%;
+  }
 
-/*section for navigation*/
+  #mini{
+    font-size: 14px;
+    font-family: proxima-nova, sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: right;
+    padding-right: .4%;
+  }
+
+  /*section for navigation*/
   .nav-menu{/*establishes location in nvm, flex display for the sprites, color, diagonals in background, outline color and style, text color, padding around sprites in section*/
     grid-area: nvm;
     display:flex;
@@ -56,47 +64,55 @@
       padding-right:30%;
       padding-top: 1%;
       padding-bottom: 2%;
+
     }
 
-  /*  .blue-layer{/*still in progress, for the section under sprites with solid color and shadows, sets position and color
-      position:relative;
-      top:50;
-      left:50;
-      background-color: #144e7f;
+    /*  .blue-layer{/*still in progress, for the section under sprites with solid color and shadows, sets position and color
+    position:relative;
+    top:50;
+    left:50;
+    background-color: #144e7f;
 
     }*/
     /*section for dashboard*/
-    .nav-dashboard{/*establishes location in nvd, color, outline color and style, text color*/
+    #nav-dashboard{/*establishes location in nvd, color, outline color and style, text color*/
       grid-area: nvd;
       background:#33cc66;
       border-radius: 8px;
+      margin-top: 2%;
+      margin-bottom:5%;
+      margin-left: 80px;
+      margin-right: 80px;
+
     }
-h1{
-  color:#ffffff;
-  font-size: 36px;
-  font-family: myriad-pro, sans-serif;
-  color: rgb(255, 255, 255);
-  text-align: left;
-  vertical-align: middle;
-  font-weight: normal;
-}
-#search-icon{
-  position:absolute;
-  z-index:2;
-  right:2%;
-  top:28%;
-}
-#searchbox-icon{
-  position:absolute;
-  z-index:1;
-  right:2%;
-  top:27%;
+    h1{
+      color:#ffffff;
+      font-size: 36px;
+      font-family: myriad-pro, sans-serif;
+      color: rgb(255, 255, 255);
+      text-align: left;
+      vertical-align: middle;
+      font-weight: normal;
+      padding-left: 3%;
+    }
+    #search-icon{
+      position:absolute;
+      z-index:2;
+      right:110px;
+      top:208px;
 
-}
+    }
+    #searchbox-icon{
+      position:absolute;
+      z-index:1;
+      right:100px;
+      top:203px;
+
+    }
 
 
-/*section for announcements*/
-    .nav-announcements{/*establishes location in nva, color, outline color and style, text color*/
+    /*section for announcements*/
+    #nav-announcements{/*establishes location in nva, color, outline color and style, text color*/
       grid-area: nva;
       background:#ffffff;
       color:#fe903f;
@@ -104,112 +120,148 @@ h1{
       font-family: myriad-pro, sans-serif;
       color: rgb(254, 127, 19);
       text-align: left;
+      margin-left: 80px;
+      outline-width: thin;
+      outline-color:#e6e6e6;
+      outline-style:solid;
+      padding: 10%;
+
+
     }
-    .nav-announcements-paragraph{/*establishes location in nvap, color, outline color and style, text color*/
+    #nav-announcements-paragraph{/*establishes location in nvap, color, outline color and style, text color*/
       grid-area:nvap;
       background:#ffffff;
       font-size: 14px;
       font-family: myriad-pro, sans-serif;
-      text-align: left;
-      justify-content: center;
+      text-align:left;
       color: rgb(119, 119, 119);
-}
-/*section for tasks*/
-    .sidebar-tasks{/*establishes location in sdt, color, outline color and style, text color*/
+      outline-style:solid;
+      outline-width: thin;
+      outline-color:#e6e6e6;
+      padding: 2%;
+      vertical-align: middle;
+      padding-right: 10%;
+    }
+    #ann-arrows{
+      grid-area:nvaa;
+      outline-width: thin;
+      outline-color:#e6e6e6;
+      outline-style:solid;
+      margin-right: 80px;
+      padding:11%;
+    }
+    /*section for tasks*/
+    #sidebar-tasks{/*establishes location in sdt, color, outline color and style, text color*/
       grid-area: sdt;
       background:#ffffff;
-      outline-color:#000000;
       outline-style:solid;
+      outline-width: thin;
+      outline-color:#e6e6e6;
+      margin-left: 80px;
+    }
+    #settings2{
+    padding-left: 430px;
+    }
+    /*section for recommendations*/
+    #sidebar-recs{/*establishes location in sdr, color, outline color and style, text color*/
+      grid-area: sdr;
+      background:#ffffff;
+      outline-style:solid;
+      outline-width: thin;
+      outline-color:#e6e6e6;
+      margin-left: 80px;
+
+    }
+    /*section for analytics*/
+    #main-analytics{/*establishes location in maina, color, outline color and style, flex display for the text input (holding place for the images), aligns in the middle, text color*/
+      grid-area:maina;
+      background:#ffffff;
+      outline-style:solid;
+      outline-width: thin;
+      outline-color:#e6e6e6;
+      margin-right: 80px;
+    }
+
+
+    h2{
       font-size: 32px;
       font-family: myriad-pro, sans-serif;
       color: rgb(36, 152, 244);
       text-align: left;
-    }
-    /*section for recommendations*/
-    .sidebar-recs{/*establishes location in sdr, color, outline color and style, text color*/
-      grid-area: sdr;
-      background:#ffffff;
-      outline-color:#000000;
-      outline-style:solid;
-      font-size: 32px;
-      font-family:myriad-pro, sans-serif;
-      color: rgb(36, 152, 244);
+      font-weight:normal;
+      padding-left: 5%;
       line-height: 1.2;
-      text-align: left;
-  }
-  /*section for analytics*/
-    .main-analytics{/*establishes location in maina, color, outline color and style, flex display for the text input (holding place for the images), aligns in the middle, text color*/
-      grid-area:maina;
-      background:#ffffff;
-      outline-color:#000000;
-      outline-style:solid;
-    }
 
-  h2{
-    font-size: 32px;
-    font-family: myriad-pro, sans-serif;
-    color: rgb(36, 152, 244);
-    text-align: left;
+
     }
-    .main-contacts{/*establishes location in mainc, color, outline color and style, flex display for the text input (holding place for the images), aligns in the middle*/
+    #main-contacts{/*establishes location in mainc, color, outline color and style, flex display for the text input (holding place for the images), aligns in the middle*/
       grid-area: mainc;
       background:#ffffff;
-      outline-color:#000000;
+      outline-width: thin;
+      outline-color:#e6e6e6;
       outline-style:solid;
       display:flex;
       justify-content: center;
       align-content: center;
+      margin-right: 80px;
     }
     /*section for "did you know?"*/
-    .main-did-you-know{/*establishes location in maind, color, outline color and style, text color*/
+    #main-did-you-know{/*establishes location in maind, color, outline color and style, text color*/
       grid-area: maind;
       background:#2498f4;
-      outline-color:#000000;
+      outline-width: thin;
+      outline-color:#e6e6e6;
       outline-style:solid;
       color:#ffffff;
+      margin-right: 80px;
 
     }
     /*section for footer*/
-    .footer{/*establishes location in ft, color, outline color and style, flex display for the text input (holding place for the images), aligns in the middle*/
+    #footer{/*establishes location in ft, color, outline color and style, flex display for the text input (holding place for the images), aligns in the middle*/
       grid-area:ft;
       background:#2498f4;
-      outline-color:#000000;
+      outline-width: thin;
+      outline-color:#e6e6e6;
       outline-style:solid;
       display:flex;
       justify-content: space-between;
+      margin-left: 80px;
+      margin-right: 80px;
     }
 
 
 
 
 
-/*still in process, set up here for next step, for changing screen sizes
+    /*still in process, set up here for next step, for changing screen sizes
     @media screen and (max-width:767px){
-      .site{
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows:
-        'hd'
-        'nv'
-        'sd'
-        'ft';
-        grid-gap:3em;
+    .site{
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows:
+    'hd'
+    'nv'
+    'sd'
+    'ft';
+    grid-gap:3em;
 
-      }
-      .sidebar{
-        grid-column: main;
-        grid-row: main;
-      }
-      .main{
-        grid-column:side;
-        grid-row:side;
-      }
+  }
+  .sidebar{
+  grid-column: main;
+  grid-row: main;
+}
+.main{
+grid-column:side;
+grid-row:side;
+}
 
-    }
+}
 */
-    /*Resources Used:
+/*Resources Used:
 
-    for stripes in nav bar: https://css-tricks.com/stripes-css/
-    for spritesheet: http://css.spritegen.com/
-    for Myriad Pro font: https://typekit.com/fonts/myriad/details/myriad-pro-light
-    for positioning: https://www.w3schools.com/cssref/pr_pos_z-index.asp
-    */
+for stripes in nav bar: https://css-tricks.com/stripes-css/
+for spritesheet: http://css.spritegen.com/
+for Myriad Pro font: https://typekit.com/fonts/myriad/details/myriad-pro-light
+for positioning: https://www.w3schools.com/cssref/pr_pos_z-index.asp
+for fr:
+https://alligator.io/css/css-grid-layout-fr-unit/
+*/
