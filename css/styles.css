@@ -153,10 +153,25 @@
       outline-width: thin;
       outline-color:#e6e6e6;
       margin-left: 80px;
+
+      display:grid;
+      grid-template-columns: 10% 60% 30%;  /*divide screen into 5 equal columns*/
+      grid-template-rows: 90px 60px 60px 60px 60px;/*sets height of rows*/
+      grid-template-areas:/*designates areas to certain sections*/
+      'hdt hdt st'
+      'num1 num1 num1'
+      'num2 num2 num2'
+      'num3 num3 num3'
+      'num4 num4 num4'
+    }
+    #task-header{
+      grid-area:hdt;
+
     }
     #settings2{
-    padding-left: 430px;
+    grid-area: st;
     }
+
     #tasks-grayed{
       font-size: 21px;
       font-family: myriad-pro, sans-serif;
@@ -164,7 +179,6 @@
       line-height: 1;
       text-align: left;
       margin-bottom: 3px;
-
 }
 .tasks-list{
   font-size: 21px;
@@ -172,20 +186,31 @@
   color: rgb(36, 152, 243);
   line-height: 1;
   text-align: left;
-  margin-bottom: 3px;
 
+/*  margin-bottom: 3px;*/
+}
+
+#num1{
+  grid-area:num1;
+  display:flex;
+}
+#num2{
+  grid-area:num2;
+  display: flex;
 
 }
-.line{
-    background-color: rgb(238, 238, 238);
-    height: 1px;
-    z-index: 3;
-    margin-bottom: 1px;
-    justify-content: center;
-    display:flex;
+#num3{
+  grid-area:num3;
+  display: flex;
 
+}
+#num4{
+  grid-area:num4;
+  display: flex;
 
-
+}
+.count{
+  grid-area:ct;
 }
 
 
@@ -198,18 +223,81 @@
       outline-width: thin;
       outline-color:#e6e6e6;
       margin-left: 80px;
-      display:grid;
-      justify-content:space-around;
 
+      display:grid;
+      grid-template-columns: 20% 80%;  /*divide screen into 5 equal columns*/
+      grid-template-rows: 90px 60px 60px 60px 60px;/*sets height of rows*/
+      grid-template-areas:/*designates areas to certain sections*/
+      'hdt hdt'
+      'art1 text1'
+      'art2 text2'
+      'ck text3'
+      'lgt text4'
     }
-    .recs-grayed{
+#rec-heading{
+  grid-area:hdt;
+}
+.art1{
+  grid-area:art1;
+  display:flex;
+  justify-content: flex-end;
+}
+.text1{
+  grid-area:text1;
+  display:flex;
+  justify-content:space-between;
+}
+.art2{
+  grid-area:art2;
+  display:flex;
+  justify-content: flex-end;
+}
+.text2{
+  grid-area:text2;
+  display:flex;
+  justify-content:space-between;
+
+}
+.check1{
+  grid-area:ck;
+  display:flex;
+  justify-content: flex-end;
+}
+.text3{
+  grid-area:text3;
+  display:flex;
+  justify-content:space-between;
+
+}
+.light{
+  grid-area:lgt;
+  display:flex;
+  justify-content: flex-end;
+}
+.text4{
+  grid-area:text4;
+  display:flex;
+  justify-content:space-between;
+
+}
+
+h4{
+  font-size: 16px;
+  font-family: myriad-pro, sans-serif;
+  color: rgb(153, 153, 153);
+  line-height: 1.3;
+  text-align: left;
+    }
+h5{
   font-size: 10px;
   font-family: myriad-pro, sans-serif;
   color: rgb(153, 153, 153);
   line-height: 1.3;
   text-align: left;
 
-    }
+
+}
+
     /*section for analytics*/
     #main-analytics{/*establishes location in maina, color, outline color and style, flex display for the text input (holding place for the images), aligns in the middle, text color*/
       grid-area:maina;
@@ -218,10 +306,22 @@
       outline-width: thin;
       outline-color:#e6e6e6;
       margin-right: 80px;
+
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;  /*divide screen into 5 equal columns*/
+      grid-template-rows: 90px 40px 40px 50px;/*sets height of rows*/
+      grid-template-areas:/*designates areas to certain sections*/
+      'hdt hdt hdt hdt'
+      'title drop drop chn1'
+      'grph grph grph chn1'
+      'grph grph grph chn2'
+      'grph grph grph chn2'
+      'fb tw fr go'
     }
 
 
-    h2{
+  h2, .hdt{
+    grid-area:hdt;
       font-size: 32px;
       font-family: myriad-pro, sans-serif;
       color: rgb(36, 152, 244);
@@ -229,9 +329,54 @@
       font-weight:normal;
       padding-left: 5%;
       line-height: 1.2;
-
+    }
+    .a-title{
+      grid-area:title;
+    }
+    #date{
+      grid-area:drop;
+      display:flex;
+    }
+    #bargraph{
+      grid-area:grph;
+      display:flex;
 
     }
+    #piegraph1{
+      grid-area:chn1;
+      display:flex;
+
+}
+    #piegraph1{
+      grid-area:chn2;
+      display:flex;
+
+    }
+#fb{
+  grid-area: fb;
+  display: flex;
+}
+#tw{
+  grid-area: tw;
+  display: flex;
+}
+#fr{
+  grid-area: fr;
+  display: flex;
+}
+#go{
+  grid-area: go;
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
     #main-contacts{/*establishes location in mainc, color, outline color and style, flex display for the text input (holding place for the images), aligns in the middle*/
       grid-area: mainc;
       background:#ffffff;
