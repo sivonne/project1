@@ -36,30 +36,42 @@
     <div id="nav-announcements">ANNOUNCEMENTS</div><!--class for announcements section-->
     <div id="nav-announcements-paragraph">Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus</div><!--class for paragraph in announcements section-->
     <div id="ann-arrows">
-      <img id="left-arrow"src="img/announcements/left-arrow.png" alt="Left Arrow">
-      <img id="right-arrow"src="img/announcements/right-arrow.png" alt="Right Arrow">
+      <a href="#"><img id="left-arrow"src="img/announcements/left-arrow.png" alt="Left Arrow"></a>
+      <a href="#"><img id="right-arrow"src="img/announcements/right-arrow.png" alt="Right Arrow"></a>
     </div>
     <div id="sidebar-tasks">
-      <h2 id="task-header">Tasks</h2>
-      <img id="settings2"src="img/tasks/settings2.png" alt="Settings">
+      <div id="task-header">
+      <h2 >Tasks</h2>
+      <a href="#"><img id="setting"src="img/tasks/settings2.png" alt="Settings"></a>
+      </div>
 
-      <img class="num1"src="img/tasks/num1.png" alt="1">
-      <h4 id="tasks-grayed"class="num1">Welcome Contacts</h4>
-      <img id="count32"class="num1"src="img/tasks/count32.png" alt="32">
+      <div id="num1">
+      <img src="img/tasks/num1.png" alt="1">
+      <h4 class="tasks-list">Welcome Contacts</h4>
+      <img id="count32"src="img/tasks/count32.png" alt="32">
       <!--<img class="line"src="img/tasks/line.png" alt="line">-->
+      </div>
 
-      <img class="num2"src="img/tasks/num2.png" alt="2">
-      <h4 class="tasks-list"class="num2">Provide Responses</h4>
-      <img id="count36"class="num2"src="img/tasks/count36.png" alt="36">
+
+      <div id="num2">
+      <img src="img/tasks/num2.png" alt="2">
+      <h4 class="tasks-list">Provide Responses</h4>
+      <img id="count36"src="img/tasks/count36.png" alt="36">
 <!--<img class="line"src="img/tasks/line.png" alt="line">-->
-      <img class="num3"src="img/tasks/num3.png" alt="3">
-      <h4 class="tasks-list"class="num3">Review Activity</h4>
-      <img id="count36-2"class="num3"src="img/tasks/count36.png" alt="36">
+</div>
+
+  <div id="num3">
+      <img src="img/tasks/num3.png" alt="3">
+      <h4 class="tasks-list">Review Activity</h4>
+      <img id="count36-2"src="img/tasks/count36.png" alt="36">
 <!--<img class="line"src="img/tasks/line.png" alt="line">-->
+</div>
+  <div id="num4">
       <img class="num4"src="img/tasks/num4.png" alt="4">
       <h4 class="tasks-list"class="num4">Reach Out</h4>
       <img id="count3"class="num4"src="img/tasks/count3.png" alt="3">
 <!--<img class="line"src="img/tasks/line.png" alt="line">-->
+</div>
 </div><!--class for sidebar for tasks section-->
 
     <div id="sidebar-recs">
@@ -90,18 +102,37 @@
     <div id="main-analytics">
       <h2 id="hdt">Analytics</h2>
       <h3 id="a-title">ACTIVITY</h3>
-      <img id="date"src="img/graph/date.png" alt="Date Selector">
-      <img id="date"src="img/contacts-customers/base.png" alt="Base">
+<div class="date">
+      <select>
+        <option>06/28/11 - 07/21/11</option>
+        <option>07/21/11 - 08/14/11</option>
+        <option>08/14/11 - 09/07/11</option>
+        <option>09/07/11 - end of time</option>
+      </select>
+      </div>
       <img id="bargraph"src="img/graph/bargraph.png" alt="Bargraph">
+
 
       <img id="piegraph1"src="img/graph/channelgraph.png" alt="Channel">
       <img id="piegraph2"src="img/graph/refgraph.png" alt="References">
 
-      <img id="fb"src="img/graph/fb.png" alt="Social">
-      <img id="tw"src="img/graph/twit.png" alt="Social">
-      <img id="fr"src="img/graph/foursquare.png" alt="Social">
-      <img id="go"src="img/graph/goog.png" alt="Social">
 
+
+      <div id="fb">
+        <h6 id="fb-h">Facebook</h6>
+      </div>
+
+      <div id="tw">
+        <h6 id="tw-h">Twitter</h6>
+      </div>
+
+      <div id="fr">
+        <h6 id="fr-h">Foursquare</h6>
+      </div>
+
+      <div id="go">
+        <h6 id="go-h">Google+</h6>
+      </div>
     </div><!--class for analytics section-->
     <div id="main-contacts">
       <img class="contacts-customer"src="img/contacts-customers/contacts.png" alt="Contacts">
