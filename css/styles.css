@@ -1,8 +1,8 @@
 @supports (grid-area:auto){/*uses CSS Grid*/
   .site{
     display:grid;
-    grid-template-columns: 1fr 17% 1fr 1fr 14%;  /*divide screen into 5 equal columns*/
-    grid-template-rows: 50px 90px 180px 60px 350px 200px 200px 200px 200px;/*sets height of rows*/
+    grid-template-columns: 1fr 17% 1fr 1fr 12%;  /*divide screen into 5 equal columns*/
+    grid-template-rows: 50px 90px 180px 60px 350px 100px 200px 180px 200px;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
     'hd hd hd hd hd'/*heading*/
     'nvm nvm nvm nvm nvm'/*nav menu*/
@@ -306,6 +306,7 @@ h5{
       outline-width: thin;
       outline-color:#e6e6e6;
       margin-right: 80px;
+      padding-left: 5%;
 
       display:grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;  /*divide screen into 5 equal columns*/
@@ -336,6 +337,9 @@ h5{
     #date{
       grid-area:drop;
       display:flex;
+    }
+    #date:hover, #date:click{
+
     }
     #bargraph{
       grid-area:grph;
@@ -369,7 +373,15 @@ h5{
   display: flex;
 }
 
+h3{
+  font-size: 13px;
+  font-family: myriad-pro, sans-serif;
+  color: rgb(153, 153, 153);
+  line-height: 1.2;
+  text-align: left;
+  padding-left: 10%;
 
+}
 
 
 
@@ -396,9 +408,30 @@ h5{
       outline-color:#e6e6e6;
       outline-style:solid;
       color:#ffffff;
-      margin-right: 80px;
+        display:flex;
+        align-items: center;
+        margin-right: 80px;
+        border-radius: 25px;
+        border-color: white;
+        border-style:solid;
+        border-width:18px;
+      }
+
+
+p{
+      padding: 4%;
+      font-size: 13px;
+      font-family: myriad-pro, sans-serif;
+      color: rgb(255, 255, 255);
+      line-height: 1.2;
+      text-align: left;
 
     }
+
+
+
+
+
     /*section for footer*/
     #footer{/*establishes location in ft, color, outline color and style, flex display for the text input (holding place for the images), aligns in the middle*/
       grid-area:ft;
@@ -447,4 +480,6 @@ for Myriad Pro font: https://typekit.com/fonts/myriad/details/myriad-pro-light
 for positioning: https://www.w3schools.com/cssref/pr_pos_z-index.asp
 for fr:
 https://alligator.io/css/css-grid-layout-fr-unit/
+for links:
+https://www.w3schools.com/html/html_links.asp
 */
