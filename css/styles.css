@@ -292,12 +292,14 @@ h5{
     padding-left: 5%;
 
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;  /*divide screen into 5 equal columns*/
-    grid-template-rows: 100px 100px 100px 300px;/*sets height of rows*/
+    grid-template-columns: 1fr 1fr 1fr 1fr;  /*divide screen into 4 equal columns*/
+    grid-template-rows: 20% 1fr 1fr 1fr 1fr 1fr;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
     'hdt hdt hdt hdt'
-    'title drop drop chn1'
-    'grph grph grph chn2'
+    'title drop drop chn'
+    'grph grph grph chn'
+    'grph grph grph chn'
+    'grph grph grph chn'
     'fb tw fr go'
 }
 
@@ -324,23 +326,33 @@ h5{
   }
 
 
-  #bargraph{
+#bargraph{
     grid-area:grph;
-    display:flex;
 
   }
+#pies{
+  grid-area:chn;
+  border-left-style: solid;
+  border-left-width: thin;
+  border-left-color:#dddddd;
+  align-items: center;
+  padding-left: 20%;
 
-  #piegraph1{
+
+
+
+
+}
+  /*#piegraph1{
     grid-area:chn1;
-    display:flex;
+    justify-content:center;
     align-items: center;
   }
   #piegraph2{
     grid-area:chn2;
-    display:flex;
+    justify-content:center;
     align-items: center;
-
-  }
+  }*/
 
   #fb, #tw, #fr, #go{
     background-repeat: no-repeat;
@@ -384,7 +396,6 @@ h5{
     color: rgb(153, 153, 153);
     line-height: 1.2;
     text-align: left;
-    padding-left: 10%;
   }
 
 
