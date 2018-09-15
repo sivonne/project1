@@ -49,7 +49,6 @@
       <img src="img/tasks/num1.png" alt="1">
       <h4 class="tasks-list">Welcome Contacts</h4>
       <img id="count32"src="img/tasks/count32.png" alt="32">
-      <!--<img class="line"src="img/tasks/line.png" alt="line">-->
       </div>
 
 
@@ -57,45 +56,40 @@
       <img src="img/tasks/num2.png" alt="2">
       <h4 class="tasks-list">Provide Responses</h4>
       <img id="count36"src="img/tasks/count36.png" alt="36">
-<!--<img class="line"src="img/tasks/line.png" alt="line">-->
 </div>
 
   <div id="num3">
       <img src="img/tasks/num3.png" alt="3">
       <h4 class="tasks-list">Review Activity</h4>
       <img id="count36-2"src="img/tasks/count36.png" alt="36">
-<!--<img class="line"src="img/tasks/line.png" alt="line">-->
 </div>
   <div id="num4">
       <img class="num4"src="img/tasks/num4.png" alt="4">
       <h4 class="tasks-list"class="num4">Reach Out</h4>
       <img id="count3"class="num4"src="img/tasks/count3.png" alt="3">
-<!--<img class="line"src="img/tasks/line.png" alt="line">-->
 </div>
 </div><!--class for sidebar for tasks section-->
 
     <div id="sidebar-recs">
       <h2 id="rec-heading">Recommendations</h2>
 
-      <img class="art1"src="img/recs/icon-art.png" alt="article">
+
+      <img class="art1"class="art-border"src="img/recs/icon-art.png" alt="article">
+
       <h5 class="text1">Article</h5>
-      <h4 class="text1">Welcome Contacts</h4>
-      <img class="text1"src="img/tasks/line.png" alt="line">
+      <h4 class="text1"class="art-border">Welcome Contacts</h4>
 
-      <img class="art2"src="img/recs/icon-art.png" alt="article">
+      <img class="art2"class="art-border"src="img/recs/icon-art.png" alt="article">
       <h5 class="text2">Article</h5>
-      <h4 class="text2">Provide Responses</h4>
-      <img class="text2"src="img/tasks/line.png" alt="line">
+      <h4 class="text2"class="art-border">Provide Responses</h4>
 
-      <img class="check1"src="img/recs/icon-checklist.png" alt="checklist">
+      <img class="check1"class="art-border"src="img/recs/icon-checklist.png" alt="checklist">
       <h5 class="text3">Checklist</h5>
-      <h4 class="text3">Review Activity</h4>
-      <img class="text3"src="img/tasks/line.png" alt="line">
+      <h4 class="text3"class="art-border">Review Activity</h4>
 
-      <img class="light"src="img/recs/light.png" alt="light">
+      <img class="light"class="art-border"src="img/recs/light.png" alt="light">
       <h5 class="text4">Tip</h5>
       <h4 class="text4">Reach Out</h4>
-      <img class="text4"src="img/tasks/line.png" alt="line">
 
 
     </div><!--class for recommendations section-->
@@ -103,14 +97,15 @@
       <h2 id="hdt">Analytics</h2>
       <h3 id="a-title">ACTIVITY</h3>
 <div class="date">
-      <select>
+      <select id="dropdown1">
         <option>06/28/11 - 07/21/11</option>
         <option>07/21/11 - 08/14/11</option>
         <option>08/14/11 - 09/07/11</option>
         <option>09/07/11 - end of time</option>
       </select>
-      </div>
+</div>
       <img id="bargraph"src="img/graph/bargraph.png" alt="Bargraph">
+
       <div id="pies">
         <div id="piegraph">
         <h3>CHANNELS</h3>
@@ -123,22 +118,37 @@
     </div>
 
 
-
-      <div id="fb">
-        <h6 id="fb-h">Facebook</h6>
-      </div>
-
+<div id="fb">
+    <div class="checkbox">
+    <input type="checkbox" id="checkbox_1">
+    <label for="checkbox_1"></label>
+    </div>
+    <h6 id="fb-h">Facebook</h6>
+</div>
       <div id="tw">
+        <div class="checkbox">
+        <input type="checkbox" id="checkbox_2">
+        <label for="checkbox_2"></label>
+        </div>
         <h6 id="tw-h">Twitter</h6>
       </div>
 
       <div id="fr">
+        <div class="checkbox">
+        <input type="checkbox" id="checkbox_3">
+        <label for="checkbox_3"></label>
+        </div>
         <h6 id="fr-h">Foursquare</h6>
       </div>
 
       <div id="go">
+        <div class="checkbox">
+        <input type="checkbox" id="checkbox_4">
+        <label for="checkbox_4"></label>
+        </div>
         <h6 id="go-h">Google+</h6>
       </div>
+      
     </div><!--class for analytics section-->
     <div id="main-contacts">
       <img class="contacts-customer"src="img/contacts-customers/contacts.png" alt="Contacts">

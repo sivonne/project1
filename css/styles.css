@@ -1,8 +1,8 @@
 @supports (grid-area:auto){/*uses CSS Grid*/
   .site{
     display:grid;
-    grid-template-columns: 1fr 17% 1fr 1fr 13%;  /*divide screen into 5 equal columns*/
-    grid-template-rows: 50px 90px 180px 60px 350px 200px 200px 180px 200px;/*sets height of rows*/
+    grid-template-columns: 1fr 17% 1fr 1fr 14%;  /*divide screen into 5 equal columns*/
+    grid-template-rows: 50px 90px 180px 60px 330px 200px 200px 180px 200px;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
     'hd hd hd hd hd'/*heading*/
     'nvm nvm nvm nvm nvm'/*nav menu*/
@@ -145,9 +145,10 @@ h1{
       outline-width: thin;
       outline-color:#e6e6e6;
       margin-left: 80px;
+      padding-left: 1%;
 
       display:grid;
-      grid-template-columns: 10% 60% 30%;  /*divide screen into 5 equal columns*/
+      grid-template-columns: 10% 50% 40%;  /*divide screen into 5 equal columns*/
       grid-template-rows: 90px 60px 60px 60px 60px;/*sets height of rows*/
       grid-template-areas:/*designates areas to certain sections*/
       'hdt hdt hdt'
@@ -162,6 +163,7 @@ h1{
       align-items: center;
       justify-content:space-between;
       padding-right: 5%;
+      padding-left: 3%;
 }
 
 
@@ -171,29 +173,29 @@ h1{
       font-family: myriad-pro, sans-serif;
       color: rgb(36, 152, 243);
       line-height: 1;
-      text-align: left;
+
 
       /*  margin-bottom: 3px;*/
 }
 .tasks-list:hover{
-      font-size: 21px;
-      font-family: myriad-pro, sans-serif;
+
       color: rgb(204, 204, 204);
-      line-height: 1;
-      text-align: left;
-      margin-bottom: 3px;
+
 }
 #num1, #num2, #num3, #num4{
-      padding-left: 2%;
-      display:flex;
-      justify-content:stretch;
+      padding:2%;
+      display:inline-flex;
+      justify-content:space-between;
       align-items: center;
+      border-bottom-style: solid;
+      border-bottom-color:#eeeeee;
+      border-bottom-width: thin;
 }
+#num1:hover, #num2:hover, #num3:hover, #num4:hover{
+
+   }
 #num1{
       grid-area:num1;
-}
-#num1:hover{
-      opacity:50%;
 }
 #num2{
       grid-area:num2;
@@ -203,6 +205,7 @@ h1{
 }
 #num4{
       grid-area:num4;
+      border:none;
 }
   /*section for recommendations*/
 #sidebar-recs{/*establishes location in sdr, color, outline color and style, text color*/
@@ -212,10 +215,12 @@ h1{
     outline-width: thin;
     outline-color:#e6e6e6;
     margin-left: 80px;
+    padding-left: 3%;
+
 
     display:grid;
     grid-template-columns: 20% 80%;  /*divide screen into 5 equal columns*/
-    grid-template-rows: 90px 60px 60px 60px 60px;/*sets height of rows*/
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
     'hdt hdt'
     'art1 text1'
@@ -226,45 +231,42 @@ h1{
 #rec-heading{
     grid-area:hdt;
 }
+.art-border{
+  border-style: solid;
+  border-color:#eeeeee;
+  border-width: thin;
+}
 .art1{
     grid-area:art1;
-    display:flex;
-    justify-content: flex-end;
 }
+
 .text1{
     grid-area:text1;
     display:flex;
-    justify-content:space-between;
 }
 .art2{
     grid-area:art2;
     display:flex;
-    justify-content: flex-end;
 }
 .text2{
     grid-area:text2;
     display:flex;
-    justify-content:space-between;
 }
 .check1{
     grid-area:ck;
     display:flex;
-    justify-content: flex-end;
 }
 .text3{
     grid-area:text3;
     display:flex;
-    justify-content:space-between;
 }
 .light{
     grid-area:lgt;
     display:flex;
-    justify-content: flex-end;
 }
 .text4{
     grid-area:text4;
     display:flex;
-    justify-content:space-between;
 }
 h4{
     font-size: 16px;
@@ -272,6 +274,8 @@ h4{
     color: rgb(153, 153, 153);
     line-height: 1.3;
     text-align: left;
+    padding-top: 5%;
+
 }
 h5{
     font-size: 10px;
@@ -293,42 +297,33 @@ h5{
 
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;  /*divide screen into 4 equal columns*/
-    grid-template-rows: 20% 1fr 1fr 1fr 1fr 1fr;/*sets height of rows*/
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
     'hdt hdt hdt hdt'
-    'title drop drop chn'
-    'grph grph grph chn'
+    'title title drop chn'
     'grph grph grph chn'
     'grph grph grph chn'
     'fb tw fr go'
 }
-
-
-  h2, .hdt{
+h2{
+  font-size: 32px;
+  font-family: myriad-pro, sans-serif;
+  color: rgb(36, 152, 244);
+  text-align: left;
+  font-weight:normal;
+  line-height: 1.2;
+}
+#hdt{
     grid-area:hdt;
-    font-size: 32px;
-    font-family: myriad-pro, sans-serif;
-    color: rgb(36, 152, 244);
-    text-align: left;
-    font-weight:normal;
-    padding-left: 5%;
-    line-height: 1.2;
   }
-  .a-title{
+#a-title{
     grid-area:title;
   }
-  #date{
+#date{
     grid-area:drop;
-    position:relative;
   }
-  select{
-    background-image: url(img/graph/drop-box.png)
-  }
-
-
 #bargraph{
     grid-area:grph;
-
   }
 #pies{
   grid-area:chn;
@@ -337,29 +332,80 @@ h5{
   border-left-color:#dddddd;
   align-items: center;
   padding-left: 20%;
+}
+/*#social{
+  grid-area:so;
+  display: flex;
+  align-items:center;
+  align-content: center;
+  justify-content:center;
+  margin-right: 6%;
 
 
+}*/
+/*For Check Boxes*/
+.checkbox input[type="checkbox"] {
+    opacity: 0;
+}
 
+.checkbox label {
+    position: relative;
+    display: inline-block;
 
+    /*16px width of fake checkbox + 6px distance between fake checkbox and text*/
 
 }
-  /*#piegraph1{
-    grid-area:chn1;
-    justify-content:center;
-    align-items: center;
-  }
-  #piegraph2{
-    grid-area:chn2;
-    justify-content:center;
-    align-items: center;
-  }*/
 
-  #fb, #tw, #fr, #go{
-    background-repeat: no-repeat;
-    background-position: center;
+.checkbox label::before,
+.checkbox label::after {
+    position: absolute;
+    content:url('../img/graph/unchecked.png');
+
+    /*Needed for the line-height to take effect*/
+    display:inline-block;
+}
+
+/*Outer box of the fake checkbox*/
+.checkbox label::before{
+  width: 18px; height: 18px;
+
+
+    /*(24px line-height - 16px height of fake checkbox) / 2 - 1px for the border
+     *to vertically center it.
+     */
+
+}
+
+/*Checkmark of the fake checkbox*/
+.checkbox label::after {
+    width: 23px;
+    height: 21px;
+
+}
+
+/*Hide the checkmark by default*/
+.checkbox input[type="checkbox"] + label::after {
+    content: none;
+}
+
+/*Unhide on the checked state*/
+.checkbox input[type="checkbox"]:checked + label::after {
+    content: url('../img/graph/checked.png');
+
+}
+
+/*Adding focus styles on the outer-box of the fake checkbox*/
+.checkbox input[type="checkbox"]:focus + label::before {
+    content: url('../img/graph/unchecked.png');
+
+}
+
+#fb, #tw, #fr, #go{
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
+    margin-right: 10px;
+
   }
   #fb{
     grid-area: fb;
@@ -373,17 +419,30 @@ h5{
   #go{
     grid-area: go;
   }
+  #fb-h, #tw-h, #fr-h, #go-h{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 7%;
+    padding-right: 7%;
+    border-radius: 5px;
+    margin-left: 15%;
+    margin-top: 35%;
+    margin-right: 10%;
+    border-color: inherit;
+
+
+  }
   #fb-h{
-    background-image: url("../img/graph/fb.png")
+    background-color: #114570;
   }
   #tw-h{
-    background-image: url("../img/graph/twit.png")
+    background-color: #2298f4;
   }
   #fr-h{
-    background-image:url("../img/graph/foursquare.png")
+    background-color: #3a599b;
   }
   #go-h{
-    background-image:url("../img/graph/goog.png");
+    background-color: #31cc66;
   }
   h6{
     font-size: 12px;
@@ -494,4 +553,11 @@ for links:
 https://www.w3schools.com/html/html_links.asp
 for dropdown:
 https://www.w3schools.com/howto/howto_custom_select.asp
+https://www.w3schools.com/css/css_dropdowns.asp
+for grid:
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#Fixed_and_flexible_track_sizes
+for nested grids:
+https://rachelandrew.co.uk/archives/2015/02/04/css-grid-layout-creating-complex-grids/
+for checkbox:https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
+https://medium.com/claritydesignsystem/pure-css-accessible-checkboxes-and-radios-buttons-54063e759bb3
 */
