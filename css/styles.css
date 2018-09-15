@@ -168,7 +168,7 @@ h1{
 
 
 
-.tasks-list{
+h7{
       font-size: 21px;
       font-family: myriad-pro, sans-serif;
       color: rgb(36, 152, 243);
@@ -176,11 +176,6 @@ h1{
 
 
       /*  margin-bottom: 3px;*/
-}
-.tasks-list:hover{
-
-      color: rgb(204, 204, 204);
-
 }
 #num1, #num2, #num3, #num4{
       padding:2%;
@@ -192,7 +187,7 @@ h1{
       border-bottom-width: thin;
 }
 #num1:hover, #num2:hover, #num3:hover, #num4:hover{
-
+  filter:grayscale(100%);
    }
 #num1{
       grid-area:num1;
@@ -215,58 +210,79 @@ h1{
     outline-width: thin;
     outline-color:#e6e6e6;
     margin-left: 80px;
-    padding-left: 3%;
-
-
     display:grid;
-    grid-template-columns: 20% 80%;  /*divide screen into 5 equal columns*/
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;/*sets height of rows*/
+    grid-template-columns: 30% 70%;  /*divide screen into 5 equal columns*/
+    grid-template-rows: 1fr 18% 18% 18% 18%;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
     'hdt hdt'
-    'art1 text1'
-    'art2 text2'
-    'ck text3'
-    'lgt text4'
-}
-#rec-heading{
-    grid-area:hdt;
-}
-.art-border{
-  border-style: solid;
-  border-color:#eeeeee;
-  border-width: thin;
-}
-.art1{
-    grid-area:art1;
+    'art1 art1'
+    'art2 art2'
+    'art3 art3'
+    'art4 art4'
+
 }
 
-.text1{
-    grid-area:text1;
-    display:flex;
+#rec-heading{
+    grid-area:hdt;
+    padding-left: 3%;
+
 }
-.art2{
+
+
+#art1:hover, #art2:hover,#art3:hover,#art4:hover{
+  filter:grayscale(100%);
+
+}
+
+h4:hover{
+  color:black;
+}
+#art1, #art2, #art3, #art4{
+  border-bottom-style: solid;
+  border-bottom-color:#eeeeee;
+  border-bottom-width: thin;
+
+}
+#art1{
+    grid-area:art1;
+    display:flex;
+    padding: 5%;
+    justify-content:flex-start;
+    align-content: center;
+}
+#art2{
     grid-area:art2;
     display:flex;
+    padding: 5%;
+    justify-content:flex-start;
+    align-content: center;
+
 }
-.text2{
-    grid-area:text2;
+#art3{
+    grid-area:art3;
     display:flex;
+    padding: 5%;
+    justify-content:flex-start;
+    align-content: center;
+
 }
-.check1{
-    grid-area:ck;
+#art4{
+    grid-area:art4;
     display:flex;
+    padding: 5%;
+    justify-content:flex-start;
+    align-content: center;
+
 }
-.text3{
-    grid-area:text3;
-    display:flex;
+.art{
+  padding:4%;
+
 }
-.light{
-    grid-area:lgt;
-    display:flex;
-}
-.text4{
-    grid-area:text4;
-    display:flex;
+
+.text{
+margin-left: 2%;
+margin-bottom: 5%;
+
 }
 h4{
     font-size: 16px;
@@ -274,8 +290,7 @@ h4{
     color: rgb(153, 153, 153);
     line-height: 1.3;
     text-align: left;
-    padding-top: 5%;
-
+    margin-bottom: 2%;
 }
 h5{
     font-size: 10px;
