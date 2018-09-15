@@ -2,7 +2,7 @@
   .site{
     display:grid;
     grid-template-columns: 1fr 17% 1fr 1fr 14%;  /*divide screen into 5 equal columns*/
-    grid-template-rows: 50px 90px 180px 60px 330px 200px 200px 180px 200px;/*sets height of rows*/
+    grid-template-rows: 50px 90px 180px 60px 330px 150px 200px 180px 260px;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
     'hd hd hd hd hd'/*heading*/
     'nvm nvm nvm nvm nvm'/*nav menu*/
@@ -294,10 +294,11 @@ h5{
     outline-color:#e6e6e6;
     margin-right: 80px;
     padding-left: 5%;
+    padding-right: 3%;
 
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;  /*divide screen into 4 equal columns*/
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;/*sets height of rows*/
+    grid-template-rows: 1fr 10% 30% 10% 1fr;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
     'hdt hdt hdt hdt'
     'title title drop chn'
@@ -430,7 +431,6 @@ h2{
     margin-right: 10%;
     border-color: inherit;
 
-
   }
   #fb-h{
     background-color: #114570;
@@ -509,14 +509,20 @@ h2{
     outline-color:#e6e6e6;
     outline-style:solid;
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     margin-left: 80px;
     margin-right: 80px;
+    margin-bottom:20px;
+
   }
 
-
-
-
+#see{
+  margin-top: 5px;
+}
+#watch, #version2{
+  margin-top:10px;
+}
 
   /*still in process, set up here for next step, for changing screen sizes
   @media screen and (max-width:767px){
@@ -560,4 +566,5 @@ for nested grids:
 https://rachelandrew.co.uk/archives/2015/02/04/css-grid-layout-creating-complex-grids/
 for checkbox:https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
 https://medium.com/claritydesignsystem/pure-css-accessible-checkboxes-and-radios-buttons-54063e759bb3
+
 */
