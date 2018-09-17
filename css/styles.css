@@ -1,13 +1,13 @@
 @supports (grid-area:auto){/*uses CSS Grid*/
   .site{
     display:grid;
-    grid-template-columns: 1fr 17% 1fr 1fr 14%;  /*divide screen into 5 equal columns*/
-    grid-template-rows: 45px 90px 165px 60px 340px 150px 230px 170px 260px 60px;/*sets height of rows*/
+    grid-template-columns: 1fr 1fr 1fr 1fr 14%;  /*divide screen into 5 equal columns*/
+    grid-template-rows:10% 15% 15% 5% 20% 10% 8% 10% 1fr 5%;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
     'hd hd hd hd hd'/*heading*/
-    'nvm nvm nvm nvm nvm'/*nav menu*/
+    'nv nv nv nv nv'/*nav menu*/
     'nvd nvd nvd nvd nvd'/*dashboard nav*/
-    'nva nvap nvap nvap nvaa'/*announements (and paragraph) nav*/
+    'nva nvap nvap nvap nvaa'/*announcements (and paragraph) nav*/
     'sdt sdt maina maina maina'/*sidebar tasks and main announcements*/
     'sdr sdr maina maina maina'
     'sdr sdr mainc mainc mainc'/*sidebar recommendations and main contacts/customers*/
@@ -20,7 +20,8 @@
 
   /*section for mini*/
 #header-mini{/*establishes location in hd, color, outline color and style, text color*/
-       grid-area: hd;
+       grid-row:hd;
+       grid-column: hd;
        background:#2290e9;
        display: flex;
        align-items: center;
@@ -45,9 +46,11 @@
 
   /*section for navigation*/
 #nav-menu{/*establishes location in nvm, flex display for the sprites, color, diagonals in background, outline color and style, text color, padding around sprites in section*/
-    grid-area: nvm;
+    grid-row: nv;
+    grid-column: nv;
     display:flex;
-    justify-content:space-between;
+    justify-content:space-around;
+    align-items: center;
     background:repeating-linear-gradient(
       135deg,
       #154771,
@@ -76,8 +79,9 @@
       border-radius: 8px;
       margin-top: 2%;
       margin-bottom:5%;
-      margin-left: 80px;
-      margin-right: 80px;
+
+      /*margin-left: 80px;
+      margin-right: 80px;*/
 }
 h1{
       color:#ffffff;
@@ -114,7 +118,7 @@ h1{
       font-family: myriad-pro, sans-serif;
       color: rgb(254, 127, 19);
       text-align: left;
-      margin-left: 80px;
+      /*margin-left: 80px;*/
       outline-width: thin;
       outline-color:#e6e6e6;
       outline-style:solid;
@@ -139,7 +143,7 @@ h1{
       outline-width: thin;
       outline-color:#e6e6e6;
       outline-style:solid;
-      margin-right: 80px;
+      /*margin-right: 80px;*/
       padding:10%;
 }
     /*section for tasks*/
@@ -149,7 +153,7 @@ h1{
       outline-style:solid;
       outline-width: thin;
       outline-color:#e6e6e6;
-      margin-left: 80px;
+      /*margin-left: 80px;*/
       padding-left: 1%;
 
       display:grid;
@@ -214,7 +218,7 @@ h7{
     outline-style:solid;
     outline-width: thin;
     outline-color:#e6e6e6;
-    margin-left: 80px;
+    /*margin-left: 80px;*/
     display:grid;
     grid-template-columns: 30% 70%;  /*divide screen into 5 equal columns*/
     grid-template-rows: 1fr 18% 18% 18% 18%;/*sets height of rows*/
@@ -312,7 +316,7 @@ h5{
     outline-style:solid;
     outline-width: thin;
     outline-color:#e6e6e6;
-    margin-right: 80px;
+    /*margin-right: 80px;*/
     padding-left: 5%;
     padding-right: 3%;
 
@@ -483,7 +487,7 @@ h2{
     display:flex;
     justify-content: center;
     align-content: center;
-    margin-right: 80px;
+    /*margin-right: 80px;*/
   }
   /*section for "did you know?"*/
   #main-did-you-know{/*establishes location in maind, color, outline color and style, text color*/
@@ -495,7 +499,7 @@ h2{
     color:#ffffff;
     display:flex;
     align-items: center;
-    margin-right: 80px;
+    /*margin-right: 80px;*/
     border-radius: 22px;
     border-color: white;
     border-style:solid;
@@ -527,8 +531,8 @@ h2{
     display:flex;
     justify-content: space-around;
     align-items: center;
-    margin-left: 80px;
-    margin-right: 80px;
+    /*margin-left: 80px;
+    margin-right: 80px;*/
     margin-bottom:20px;
 
   }
@@ -548,8 +552,8 @@ h2{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-left: 80px;
-  margin-right: 80px;
+  /*margin-left: 80px;
+  margin-right: 80px;*/
   outline-width: thin;
   outline-color:#e6e6e6;
   outline-style:solid;
@@ -636,53 +640,49 @@ h10{
   padding-left: 35px;
   padding-right: 30px;
 }
+
+
+
+
   /*still in process, set up here for next step, for changing screen sizes*/
   @media screen and (max-width:375px){
   .site{
-  grid-template-columns: 1fr;
-  grid-template-rows:20px 20px 30px 150px 50px 200px 200px 200px 200px 200px 200px 200px;
+  display:grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 5% 10% 10% 10% 10% 20% 10% 10% 5%;
   grid-template-areas:
   'hd'/*heading*/
-  'nvm'/*nav menu*/
-  'nvd'/*dashboard nav*/
-  'nva'/*announements (and paragraph) nav*/
-  'nvap'
-  'nvaa'
+  'nv'/*nav menu*/
   'sdt'/*sidebar tasks and main announcements*/
-  'sdr'/*sidebar recommendations and main contacts/customers*/
-  'maina'
-  'mainc'
-  'maind'/*sidebar recs and main "did you know?"*/
+'maina'
+'mainc'
+  'sdr'
+  'maind'
   'ft'/*footer section*/
-  grid-gap:2em;
+  'ft2'
 
 
 }
 #header-mini{
-  grid-column:hd;
-  grid-row:hd;
-
+  grid-area:hd;
 }
 #nav-menu{
-  grid-column:nvm;
-  grid-row:nvm;
+  grid-area: nv;
 }
 #nav-dashboard{
-  grid-column:nvd;
-  grid-row:nvd;
-
+  grid-area:nv;
 }
 #nav-announcements{
-  grid-column:nva;
-  grid-row:nva;
+  grid-column:nv;
+  grid-row:nv;
 }
 #nav-announcements-paragraph{
-  grid-column:nva;
-  grid-row:nva;
+  grid-column:nv;
+  grid-row:nv;
 }
 #ann-arrows{
-  grid-column:nvaa;
-  grid-row:nvaa;
+  grid-column:nv;
+  grid-row:nv;
 }
 #sidebar-tasks{
   grid-column:sdt;
@@ -690,27 +690,34 @@ h10{
 }
 #sidebar-recs{
   grid-column:sdr;
-  grid-row:sdr;
+  grid-row:sdr
 }
 #main-analytics{
   grid-column:maina;
   grid-row:maina;
 }
-#main-analytics{
-  grid-column:maina;
-  grid-row:maina;
-}
+
 #main-contacts{
+  flex-direction: column;
+
   grid-column:mainc;
   grid-row:mainc;
 }
 #main-did-you-know{
+  flex-direction: column;
+
   grid-column:maind;
   grid-row:maind;
 }
 #footer{
+  flex-direction: column;
   grid-column:ft;
-  grid-row:ft;
+}
+#footer2{
+  flex-direction: column;
+
+  grid-column:ft2;
+  grid-row:ft2;
 }
 
 /*Resources Used:
