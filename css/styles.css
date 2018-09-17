@@ -2,7 +2,7 @@
   .site{
     display:grid;
     grid-template-columns: 1fr 17% 1fr 1fr 14%;  /*divide screen into 5 equal columns*/
-    grid-template-rows: 45px 90px 165px 60px 340px 150px 230px 170px 260px;/*sets height of rows*/
+    grid-template-rows: 45px 90px 165px 60px 340px 150px 230px 170px 260px 60px;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
     'hd hd hd hd hd'/*heading*/
     'nvm nvm nvm nvm nvm'/*nav menu*/
@@ -13,12 +13,13 @@
     'sdr sdr mainc mainc mainc'/*sidebar recommendations and main contacts/customers*/
     'sdr sdr maind maind maind'/*sidebar recs and main "did you know?"*/
     'ft ft ft ft ft'/*footer section*/
+    'ft2 ft2 ft2 ft2 ft2'
   }
 
 
 
   /*section for mini*/
-   .header-mini{/*establishes location in hd, color, outline color and style, text color*/
+#header-mini{/*establishes location in hd, color, outline color and style, text color*/
        grid-area: hd;
        background:#2290e9;
        display: flex;
@@ -43,7 +44,7 @@
    }
 
   /*section for navigation*/
-.nav-menu{/*establishes location in nvm, flex display for the sprites, color, diagonals in background, outline color and style, text color, padding around sprites in section*/
+#nav-menu{/*establishes location in nvm, flex display for the sprites, color, diagonals in background, outline color and style, text color, padding around sprites in section*/
     grid-area: nvm;
     display:flex;
     justify-content:space-between;
@@ -542,29 +543,176 @@ h2{
   filter:grayscale(100%);
 
 }
-  /*still in process, set up here for next step, for changing screen sizes
-  @media screen and (max-width:767px){
+#footer2{
+  grid-area:ft2;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 80px;
+  margin-right: 80px;
+  outline-width: thin;
+  outline-color:#e6e6e6;
+  outline-style:solid;
+  border-top-width: thick;
+  border-top-color:#e6e6e6;
+  border-top-style:solid;
+}
+h8{
+  font-size: 14px;
+  font-family: proxima-nova,sans-serif;
+  color: rgb(153, 153, 153);
+  line-height: 1.2;
+  text-align: left;
+  border-right-width: thin;
+  border-right-color:#e6e6e6;
+  border-right-style:solid;
+  padding-right: 5px;
+  padding-left: 2px;
+}
+h9{
+    font-size: 14px;
+    font-family: proxima-nova,sans-serif;
+    color: rgb(36, 152, 242);
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: right;
+    vertical-align: middle;
+
+}
+h10{
+  font-size: 14px;
+  font-family:proxima-nova,sans-serif;
+  color: rgb(153, 153, 153);
+  line-height: 1.2;
+  text-align: right;
+
+
+}
+
+
+
+
+#blog{
+  border-right: none;
+}
+#up{
+  padding-left: 120px;
+}
+#footer2-prom{
+  display:flex;
+  align-items: center;
+  justify-content:space-between;
+  outline-width: thin;
+  outline-color:#e6e6e6;
+  outline-style:solid;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 30px;
+  padding-right: 50px;
+}
+#prom-text{
+   align-items: center;
+}
+#footer2-log{
+  display:flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top:6px;
+  padding-bottom: 6px;
+  padding-right: 50px;
+
+
+}
+#avatar{
+  padding-right: 15px;
+  padding-left: 10px;
+}
+#footer2-soc{
+  padding-top:18px;
+  padding-bottom: 18px;
+  outline-width: thin;
+  outline-color:#e6e6e6;
+  outline-style:solid;
+  padding-left: 35px;
+  padding-right: 30px;
+}
+  /*still in process, set up here for next step, for changing screen sizes*/
+  @media screen and (max-width:375px){
   .site{
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows:
-  'hd'
-  'nv'
-  'sd'
-  'ft';
-  grid-gap:3em;
+  grid-template-columns: 1fr;
+  grid-template-rows:20px 20px 30px 150px 50px 200px 200px 200px 200px 200px 200px 200px;
+  grid-template-areas:
+  'hd'/*heading*/
+  'nvm'/*nav menu*/
+  'nvd'/*dashboard nav*/
+  'nva'/*announements (and paragraph) nav*/
+  'nvap'
+  'nvaa'
+  'sdt'/*sidebar tasks and main announcements*/
+  'sdr'/*sidebar recommendations and main contacts/customers*/
+  'maina'
+  'mainc'
+  'maind'/*sidebar recs and main "did you know?"*/
+  'ft'/*footer section*/
+  grid-gap:2em;
+
 
 }
-.sidebar{
-grid-column: main;
-grid-row: main;
-}
-.main{
-grid-column:side;
-grid-row:side;
-}
+#header-mini{
+  grid-column:hd;
+  grid-row:hd;
 
 }
-*/
+#nav-menu{
+  grid-column:nvm;
+  grid-row:nvm;
+}
+#nav-dashboard{
+  grid-column:nvd;
+  grid-row:nvd;
+
+}
+#nav-announcements{
+  grid-column:nva;
+  grid-row:nva;
+}
+#nav-announcements-paragraph{
+  grid-column:nva;
+  grid-row:nva;
+}
+#ann-arrows{
+  grid-column:nvaa;
+  grid-row:nvaa;
+}
+#sidebar-tasks{
+  grid-column:sdt;
+  grid-row:sdt;
+}
+#sidebar-recs{
+  grid-column:sdr;
+  grid-row:sdr;
+}
+#main-analytics{
+  grid-column:maina;
+  grid-row:maina;
+}
+#main-analytics{
+  grid-column:maina;
+  grid-row:maina;
+}
+#main-contacts{
+  grid-column:mainc;
+  grid-row:mainc;
+}
+#main-did-you-know{
+  grid-column:maind;
+  grid-row:maind;
+}
+#footer{
+  grid-column:ft;
+  grid-row:ft;
+}
+
 /*Resources Used:
 
 for stripes in nav bar: https://css-tricks.com/stripes-css/
