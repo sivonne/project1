@@ -2,7 +2,7 @@
   .site{
     display:grid;
     grid-template-columns: 1fr 17% 1fr 1fr 14%;  /*divide screen into 5 equal columns*/
-    grid-template-rows: 50px 90px 180px 60px 330px 150px 200px 180px 260px;/*sets height of rows*/
+    grid-template-rows: 45px 90px 165px 60px 340px 150px 230px 170px 260px;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
     'hd hd hd hd hd'/*heading*/
     'nvm nvm nvm nvm nvm'/*nav menu*/
@@ -18,27 +18,29 @@
 
 
   /*section for mini*/
-.header-mini{/*establishes location in hd, color, outline color and style, text color*/
-    grid-area: hd;
-    background:#2290e9;
-    justify-content: flex-end;
-    display: flex;
-    padding:.3%;
-    padding-right: 8%;
-}
-.mini-icons{
-    padding: 1%;
-    padding-left:.2%;
-}
-#mini{
-    font-size: 14px;
-    font-family: proxima-nova, sans-serif;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    vertical-align: middle;
-    text-align: right;
-    padding-right: .4%;
-}
+   .header-mini{/*establishes location in hd, color, outline color and style, text color*/
+       grid-area: hd;
+       background:#2290e9;
+       display: flex;
+       align-items: center;
+       justify-content: flex-end;
+       padding-right: 8%;
+       /*padding:.3%;
+       */
+   }
+   .mini-icons{
+     padding-left:.2%;
+       padding: 1%;
+
+   }
+   #mini{
+       font-size: 14px;
+       font-family: proxima-nova, sans-serif;
+       color: rgb(255, 255, 255);
+       font-weight: bold;
+       vertical-align: middle;
+       padding-bottom: 8%;
+   }
 
   /*section for navigation*/
 .nav-menu{/*establishes location in nvm, flex display for the sprites, color, diagonals in background, outline color and style, text color, padding around sprites in section*/
@@ -89,14 +91,16 @@ h1{
 #search-icon{
       position:absolute;
       z-index:2;
-      right:110px;
-      top:208px;
+      right:115px;
+      top:35%;
 }
 #searchbox-icon{
       position:absolute;
       z-index:1;
-      right:100px;
-      top:203px;
+      width:22%;
+      height:5%;
+      right:105px;
+      top:34%;
 }
 
 
@@ -359,13 +363,12 @@ h2{
 
 
 }*/
-/*For Check Boxes*/
 .checkbox input[type="checkbox"] {
     opacity: 0;
 }
 
 .checkbox label {
-    position: relative;
+    position: absolute;
     display: inline-block;
 
     /*16px width of fake checkbox + 6px distance between fake checkbox and text*/
@@ -435,7 +438,7 @@ h2{
   #go{
     grid-area: go;
   }
-  #fb-h, #tw-h, #fr-h, #go-h{
+  h6{
     padding-top: 2%;
     padding-bottom: 2%;
     padding-left: 7%;
@@ -445,7 +448,9 @@ h2{
     margin-top: 35%;
     margin-right: 10%;
     border-color: inherit;
-
+    font-size: 12px;
+    font-family: myriad-pro, sans-serif;
+    color: rgb(255, 255, 255);
   }
   #fb-h{
     background-color: #114570;
@@ -458,12 +463,7 @@ h2{
   }
   #go-h{
     background-color: #31cc66;
-  }
-  h6{
-    font-size: 12px;
-    font-family: myriad-pro, sans-serif;
-    color: rgb(255, 255, 255);
-  }
+}
   h3{
     font-size: 13px;
     font-family: myriad-pro, sans-serif;
@@ -495,7 +495,7 @@ h2{
     display:flex;
     align-items: center;
     margin-right: 80px;
-    border-radius: 25px;
+    border-radius: 22px;
     border-color: white;
     border-style:solid;
     border-width:18px;
@@ -538,7 +538,10 @@ h2{
 #watch, #version2{
   margin-top:10px;
 }
+.contacts-customer:hover{
+  filter:grayscale(100%);
 
+}
   /*still in process, set up here for next step, for changing screen sizes
   @media screen and (max-width:767px){
   .site{
@@ -581,5 +584,7 @@ for nested grids:
 https://rachelandrew.co.uk/archives/2015/02/04/css-grid-layout-creating-complex-grids/
 for checkbox:https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
 https://medium.com/claritydesignsystem/pure-css-accessible-checkboxes-and-radios-buttons-54063e759bb3
-
+for searchbar: https://www.w3schools.com/howto/howto_css_searchbar.asp
+to change cursor:
+https://www.w3schools.com/css/tryit.asp?filename=trycss_cursor
 */

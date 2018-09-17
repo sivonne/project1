@@ -6,21 +6,21 @@
 </head><!--closes head section-->
 <body class="site"><!--sets up body of site-->
   <div class="header-mini">
-    <h4 id="mini">MINI of Raleigh</h4>
+    <span style="cursor:pointer"><h4 id="mini">MINI of Raleigh</h4></span>
     <img class="mini-icons"src="img/mini/spacer.png" alt="Spacing Line">
-    <img class="mini-icons"src="img/mini/help.png" alt="Help Button">
+    <span style="cursor:pointer"><img class="mini-icons"src="img/mini/help.png" alt="Help Button"></span>
     <img class="mini-icons"src="img/mini/spacer.png" alt="Spacing Line">
-    <img class="mini-icons"src="img/mini/settings.png" alt="Settings Button">
+    <span style="cursor:pointer"><img class="mini-icons"src="img/mini/settings.png" alt="Settings Button"></span>
 
   </div><!--class for mini section-->
   <div class="nav-menu"><!--class for nav menu section-->
     <!--sets up 6 sprites for navigation menu-->
-    <div class="blue-dashboard"></div>
-    <div class="blue-customers"></div>
-    <div class="blue-messages"></div>
-    <div class="blue-promotions"></div>
-    <div class="blue-page-creator"></div>
-    <div class="blue-analytics"></div>
+    <span style="cursor:pointer"><div class="blue-dashboard"></div></span>
+    <span style="cursor:pointer"><div class="blue-customers"></div></span>
+    <span style="cursor:pointer"><div class="blue-messages"></div></span>
+    <span style="cursor:pointer"><div class="blue-promotions"></div></span>
+    <span style="cursor:pointer"><div class="blue-page-creator"></div></span>
+    <span style="cursor:pointer"><div class="blue-analytics"></div></span>
     <!--div for additional layer for the nav shadows/different color-->
     <div class="blue-layer"></div>
   </div><!--closes class for nav section-->
@@ -28,7 +28,7 @@
     <h1 id="dashwords">Dashboard</h1>
     <div class="search">
       <img id="search-icon"src="img/search/search.png" alt="Search Button">
-      <img id="searchbox-icon"src="img/search/searchbox.png" alt="Search Button">
+      <input type="text" img id="searchbox-icon"src="img/search/searchbox.png" alt="Search Button">
     </div>
   </div><!--class for dashboard section-->
 
@@ -46,25 +46,25 @@
       </div>
 
       <div id="num1">
-      <img src="img/tasks/num1.png" alt="1">
+      <a href="#"><img src="img/tasks/num1.png" alt="1"></a>
       <h7>Welcome Contacts</h4>
       <img id="count32"src="img/tasks/count32.png" alt="32">
       </div>
 
 
       <div id="num2">
-      <img src="img/tasks/num2.png" alt="2">
+      <a href="#"><img src="img/tasks/num2.png" alt="2"></a>
       <h7>Provide Responses</h4>
       <img id="count36"src="img/tasks/count36.png" alt="36">
 </div>
 
   <div id="num3">
-      <img src="img/tasks/num3.png" alt="3">
+      <a href="#"><img src="img/tasks/num3.png" alt="3"></a>
       <h7>Review Activity</h4>
       <img id="count36-2"src="img/tasks/count36.png" alt="36">
 </div>
   <div id="num4">
-      <img src="img/tasks/num4.png" alt="4">
+      <a href="#"><img src="img/tasks/num4.png" alt="4"></a>
       <h7>Reach Out</h4>
       <img id="count3"src="img/tasks/count3.png" alt="3">
 </div>
@@ -74,21 +74,21 @@
       <h2 id="rec-heading">Recommendations</h2>
 
 <div id="art1">
-      <img class="art"src="img/recs/icon-art.png" alt="article">
-      <div class="text">
+      <a href="#"><img class="art"src="img/recs/icon-art.png" alt="article">
+      <div class="text"></a>
       <h5>Article</h5>
       <h4>Welcome Contacts</h4>
       </div>
 </div>
 <div id="art2">
-      <img class="art"src="img/recs/icon-art.png" alt="article">
-      <div class="text">
+      <a href="#"><img class="art"src="img/recs/icon-art.png" alt="article">
+      <div class="text"></a>
       <h5>Article</h5>
       <h4>Provide Responses</h4>
     </div>
 </div>
 <div id="art3">
-      <img class="art"src="img/recs/icon-checklist.png" alt="checklist">
+      <a href="#"><img class="art"src="img/recs/icon-checklist.png" alt="checklist"></a>
       <div class="text">
       <h5>Checklist</h5>
       <h4>Review Activity</h4>
@@ -96,17 +96,19 @@
   </div>
 
 <div id="art4">
-      <img class="art"src="img/recs/light.png" alt="light">
+      <a href="#"><img class="art"src="img/recs/light.png" alt="light"></a>
       <div class="text">
       <h5>Tip</h5>
       <h4>Reach Out</h4>
   </div>
   </div>
     </div><!--class for recommendations section-->
+
+
     <div id="main-analytics">
       <h2 id="hdt">Analytics</h2>
       <h3 id="a-title">ACTIVITY</h3>
-<div class="date">
+<div id="date">
       <select id="dropdown1">
         <option>06/28/11 - 07/21/11</option>
         <option>07/21/11 - 08/14/11</option>
@@ -128,14 +130,14 @@
     </div>
 
 
-<div id="fb">
-    <div class="checkbox">
-    <input type="checkbox" id="checkbox_1">
-    <label for="checkbox_1"></label>
-    </div>
-    <h6 id="fb-h">Facebook</h6>
-</div>
-      <div id="tw">
+    <div id="fb">
+         <div class="checkbox">
+         <input type="checkbox" id="checkbox_1">
+         <label for="checkbox_1"></label>
+         </div>
+         <h6 id="fb-h">Facebook</h6>
+     </div>
+     <div id="tw">
         <div class="checkbox">
         <input type="checkbox" id="checkbox_2">
         <label for="checkbox_2"></label>
@@ -155,14 +157,14 @@
         <div class="checkbox">
         <input type="checkbox" id="checkbox_4">
         <label for="checkbox_4"></label>
-        </div>
-        <h6 id="go-h">Google+</h6>
-      </div>
+       </div>
+       <h6 id="go-h">Google+</h6>
+     </div>
 
     </div><!--class for analytics section-->
     <div id="main-contacts">
-      <img class="contacts-customer"src="img/contacts-customers/contacts.png" alt="Contacts">
-      <img class="contacts-customer"src="img/contacts-customers/customers.png" alt="Customers">
+      <a href="#"><img class="contacts-customer"src="img/contacts-customers/contacts.png" alt="Contacts"></a>
+      <a href="#"><img class="contacts-customer"src="img/contacts-customers/customers.png" alt="Customers"></a>
     </div><!--class for contacts and customers section-->
 
 
@@ -175,13 +177,13 @@
 </div><!--class for "did you know?" section-->
     <div id="footer">
       <div class="footer-images">
-        <img id="watch"src="img/footer/watch.png" alt="Footer Ad 1">
+        <a href="#"><img id="watch"src="img/footer/watch.png" alt="Footer Ad 1"></a>
       </div>
       <div class="footer-images">
-        <img id="see"src="img/footer/see.png" alt="Footer Ad 2">
+        <a href="#"><img id="see"src="img/footer/see.png" alt="Footer Ad 2"></a>
       </div>
       <div class="footer-images">
-        <img id="version2"src="img/footer/version2.png" alt="Footer Ad 3">
+        <a href="#"><img id="version2"src="img/footer/version2.png" alt="Footer Ad 3"></a>
       </div>
     </div><!--class for footer section-->
 <!--closes container-->
