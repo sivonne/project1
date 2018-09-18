@@ -330,11 +330,12 @@ h5{
     padding-right: 3%;
 
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;  /*divide screen into 4 equal columns*/
-    grid-template-rows: 1fr 10% 30% 10% 1fr;/*sets height of rows*/
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;  /*divide screen into 4 equal columns*/
+    grid-template-rows: 1fr 10% 30% 10% 40% 5%;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
     'hdt hdt hdt hdt'
-    'title title drop chn'
+    'title drop drop chn'
+    'grph grph grph chn'
     'grph grph grph chn'
     'grph grph grph chn'
     'fb tw fr go'
@@ -355,7 +356,60 @@ h2{
   }
 #date{
     grid-area:drop;
+    margin-right: 5%;
+
   }
+  .dropbtn {
+    background-image: url('../img/graph/date.png');
+    background-repeat:no-repeat;
+    outline-style:solid;
+    outline-width: thin;
+    outline-color:#e6e6e6;
+      padding: 11px;
+      padding-left: 10px;
+      padding-right: 40px;
+      padding-bottom: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      font-size: 13px;
+      font-family: myriad-pro, sans-serif;
+      color: rgb(102, 102, 102);
+      line-height: 1.2;
+      text-align: left;
+  }
+
+  .dropdown {
+      position: relative;
+      display: inline-block;
+
+  }
+
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+  }
+
+  .dropdown-content a {      outline-style:solid;
+      outline-width: thin;
+      outline-color:#e6e6e6;
+      padding: 11px 11px;
+      text-decoration: none;
+      font-size: 13px;
+      font-family: myriad-pro, sans-serif;
+      color: rgb(102, 102, 102);
+      line-height: 1.2;
+      text-align: left;
+      display: block;
+  }
+
+  .dropdown-content a:hover {background-color: white;}
+  .dropdown:hover .dropdown-content {display: block;}
+  .dropdown:hover .dropbtn {background-color: white;}
 #bargraph{
     grid-area:grph;
   }
@@ -755,6 +809,7 @@ https://www.w3schools.com/html/html_links.asp
 for dropdown:
 https://www.w3schools.com/howto/howto_custom_select.asp
 https://www.w3schools.com/css/css_dropdowns.asp
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_right
 for grid:
 https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#Fixed_and_flexible_track_sizes
 for nested grids:
