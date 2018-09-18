@@ -654,7 +654,7 @@ h10{
 
 
   /*still in process, set up here for next step, for changing screen sizes*/
-  @media screen and (max-width:600px){
+  @media screen and (max-width:776px){
   .site{
   display:grid;
   grid-template-columns: 100%;
@@ -675,16 +675,15 @@ h10{
 
   display:grid;
   grid-template-columns: 100%;  /*divide screen into 5 equal columns*/
-  grid-template-rows: 10% 10% 5% 1% 6% 4% 5% 4% 10% 5%;/*sets height of rows*/
+  grid-template-rows: 10% 3% 2% .5% 6% 10% 5% 4% 1fr 5%;/*sets height of rows*/
   grid-template-areas:
   'navd'
   'nva'
-  'nvap'
-  'nvaa' /*announcements (and paragraph) nav*/
- 'maina'
+  'nvap' /*announcements (and paragraph) nav*/
   'sdt'
    /*sidebar tasks and main announcements*/
   'sdr'
+  'maina'
   'mainc'/*sidebar recommendations and main contacts/customers*/
   'maind'/*sidebar recs and main "did you know?"*/
   'ft'/*footer section*/
@@ -696,32 +695,41 @@ h10{
       }
   #sidebar-tasks{
             grid-area: sdt;
+            text-align:left;
 }
 #nav-announcements{
       grid-area: nva;
-      flex-direction: column;
+
 }
 #nav-announcements-paragraph{
       grid-area:nvap;
+      align-items: center;
+
+
 }
 #ann-arrows{
-      grid-area:nvaa;
+      grid-area:nva;
+      padding-left: 70%;
     }
 #sidebar-recs{
         grid-area: sdr;
         display: flex;
         flex-direction: column;
+        align-items:stretch;
       }
 #main-analytics{
           grid-area:maina;
-          flex-direction: column;
+          flex-direction: row;
 }
 #main-contacts{
   grid-area: mainc;
   flex-direction: column;
+  align-items: center;
 }
 #main-did-you-know{
   grid-area: maind;
+  flex-direction: row;
+
 }
 #footer{
   grid-area:ft;
@@ -731,7 +739,8 @@ h10{
 #footer2{
   grid-area:ft2;
   flex-direction: column;
-
+  outline:none;
+}
 }
 /*Resources Used:
 
