@@ -1,27 +1,19 @@
 @supports (grid-area:auto){/*uses CSS Grid*/
   .site{
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 14%;  /*divide screen into 5 equal columns*/
-    grid-template-rows:10% 15% 15% 5% 20% 10% 8% 10% 1fr 5%;/*sets height of rows*/
+    grid-template-columns: 100%;
+    grid-template-rows:2% 10% 88%;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
-    'hd hd hd hd hd'/*heading*/
-    'nv nv nv nv nv'/*nav menu*/
-    'nvd nvd nvd nvd nvd'/*dashboard nav*/
-    'nva nvap nvap nvap nvaa'/*announcements (and paragraph) nav*/
-    'sdt sdt maina maina maina'/*sidebar tasks and main announcements*/
-    'sdr sdr maina maina maina'
-    'sdr sdr mainc mainc mainc'/*sidebar recommendations and main contacts/customers*/
-    'sdr sdr maind maind maind'/*sidebar recs and main "did you know?"*/
-    'ft ft ft ft ft'/*footer section*/
-    'ft2 ft2 ft2 ft2 ft2'
+    'hd'/*heading*/
+    'nv'/*nav menu*/
+    'nvdtf'/*dashboard nav*/
   }
 
 
 
   /*section for mini*/
 #header-mini{/*establishes location in hd, color, outline color and style, text color*/
-       grid-row:hd;
-       grid-column: hd;
+       grid-column:1/2;
        background:#2290e9;
        display: flex;
        align-items: center;
@@ -46,8 +38,7 @@
 
   /*section for navigation*/
 #nav-menu{/*establishes location in nvm, flex display for the sprites, color, diagonals in background, outline color and style, text color, padding around sprites in section*/
-    grid-row: nv;
-    grid-column: nv;
+    grid-column: 1/2;
     display:flex;
     justify-content:space-around;
     align-items: center;
@@ -73,13 +64,31 @@
 
     }*/
     /*section for dashboard*/
+
+#dash-to-footer{
+  grid-column: 1/2;
+  grid-area:nvdtf;
+  display:grid;
+  grid-template-columns: 1fr 10% 1fr 1fr 14%;  /*divide screen into 5 equal columns*/
+  grid-template-rows:5% 20% 10% 8% 10% 1fr 10% 5%;/*sets height of rows*/
+  grid-template-areas:
+  'navd navd navd navd navd'
+  'nva nvap nvap nvap nvaa'/*announcements (and paragraph) nav*/
+  'sdt sdt maina maina maina'/*sidebar tasks and main announcements*/
+  'sdr sdr maina maina maina'
+  'sdr sdr mainc mainc mainc'/*sidebar recommendations and main contacts/customers*/
+  'sdr sdr maind maind maind'/*sidebar recs and main "did you know?"*/
+  'ft ft ft ft ft'/*footer section*/
+  'ft2 ft2 ft2 ft2 ft2'
+
+}
+
 #nav-dashboard{/*establishes location in nvd, color, outline color and style, text color*/
-      grid-area: nvd;
+      grid-area:navd;
       background:#33cc66;
       border-radius: 8px;
       margin-top: 2%;
       margin-bottom:5%;
-
       /*margin-left: 80px;
       margin-right: 80px;*/
 }
@@ -645,23 +654,15 @@ h10{
 
 
   /*still in process, set up here for next step, for changing screen sizes*/
-  @media screen and (max-width:375px){
+  @media screen and (max-width:600px){
   .site{
   display:grid;
   grid-template-columns: 100%;
-  grid-template-rows: 5% 10% 10% 10% 10% 20% 10% 10% 5%;
+  grid-template-rows: 5% 25% 70%;
   grid-template-areas:
   'hd'/*heading*/
   'nv'/*nav menu*/
-  'sdt'/*sidebar tasks and main announcements*/
-'maina'
-'mainc'
-  'sdr'
-  'maind'
-  'ft'/*footer section*/
-  'ft2'
-
-
+  'nvdtf'/*sidebar tasks and main announcements*/
 }
 #header-mini{
   grid-area:hd;
@@ -669,57 +670,69 @@ h10{
 #nav-menu{
   grid-area: nv;
 }
-#nav-dashboard{
-  grid-area:nv;
+#dash-to-footer{
+  grid-area: nvdtf;
+
+  display:grid;
+  grid-template-columns: 100%;  /*divide screen into 5 equal columns*/
+  grid-template-rows: 10% 10% 5% 1% 6% 4% 5% 4% 10% 5%;/*sets height of rows*/
+  grid-template-areas:
+  'navd'
+  'nva'
+  'nvap'
+  'nvaa' /*announcements (and paragraph) nav*/
+ 'maina'
+  'sdt'
+   /*sidebar tasks and main announcements*/
+  'sdr'
+  'mainc'/*sidebar recommendations and main contacts/customers*/
+  'maind'/*sidebar recs and main "did you know?"*/
+  'ft'/*footer section*/
+  'ft2'
+
+  }
+  #nav-dashboard{
+        grid-area: navd;
+      }
+  #sidebar-tasks{
+            grid-area: sdt;
 }
 #nav-announcements{
-  grid-column:nv;
-  grid-row:nv;
+      grid-area: nva;
+      flex-direction: column;
 }
 #nav-announcements-paragraph{
-  grid-column:nv;
-  grid-row:nv;
+      grid-area:nvap;
 }
 #ann-arrows{
-  grid-column:nv;
-  grid-row:nv;
-}
-#sidebar-tasks{
-  grid-column:sdt;
-  grid-row:sdt;
-}
+      grid-area:nvaa;
+    }
 #sidebar-recs{
-  grid-column:sdr;
-  grid-row:sdr
-}
+        grid-area: sdr;
+        display: flex;
+        flex-direction: column;
+      }
 #main-analytics{
-  grid-column:maina;
-  grid-row:maina;
+          grid-area:maina;
+          flex-direction: column;
 }
-
 #main-contacts{
+  grid-area: mainc;
   flex-direction: column;
-
-  grid-column:mainc;
-  grid-row:mainc;
 }
 #main-did-you-know{
-  flex-direction: column;
-
-  grid-column:maind;
-  grid-row:maind;
+  grid-area: maind;
 }
 #footer{
+  grid-area:ft;
   flex-direction: column;
-  grid-column:ft;
+
 }
 #footer2{
+  grid-area:ft2;
   flex-direction: column;
 
-  grid-column:ft2;
-  grid-row:ft2;
 }
-
 /*Resources Used:
 
 for stripes in nav bar: https://css-tricks.com/stripes-css/
