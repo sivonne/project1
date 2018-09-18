@@ -68,9 +68,11 @@
 #dash-to-footer{
   grid-column: 1/2;
   grid-area:nvdtf;
+  margin-left: 80px;
+  margin-right:80px;
   display:grid;
-  grid-template-columns: 1fr 10% 1fr 1fr 14%;  /*divide screen into 5 equal columns*/
-  grid-template-rows:5% 20% 10% 8% 10% 1fr 10% 5%;/*sets height of rows*/
+  grid-template-columns: 1fr 10% 1fr 1fr 9%;  /*divide screen into 5 equal columns*/
+  grid-template-rows:15% 10% 25% 5% 5% 10% 10% 5%;/*sets height of rows*/
   grid-template-areas:
   'navd navd navd navd navd'
   'nva nvap nvap nvap nvaa'/*announcements (and paragraph) nav*/
@@ -152,6 +154,9 @@ h1{
       outline-width: thin;
       outline-color:#e6e6e6;
       outline-style:solid;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
       /*margin-right: 80px;*/
       padding:10%;
 }
@@ -330,8 +335,8 @@ h5{
     padding-right: 3%;
 
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;  /*divide screen into 4 equal columns*/
-    grid-template-rows: 1fr 10% 30% 10% 40% 5%;/*sets height of rows*/
+    grid-template-columns: 1fr 1fr 1fr 1fr;  /*divide screen into 4 equal columns*/
+    grid-template-rows: 20% 20% 30% 10% 10% 5%;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
     'hdt hdt hdt hdt'
     'title drop drop chn'
@@ -412,6 +417,7 @@ h2{
   .dropdown:hover .dropbtn {background-color: white;}
 #bargraph{
     grid-area:grph;
+    width:100%;
   }
 #pies{
   grid-area:chn;
@@ -562,6 +568,9 @@ h2{
     color:#ffffff;
     display:flex;
     align-items: center;
+    justify-content: space-between;
+
+
     /*margin-right: 80px;*/
     border-radius: 22px;
     border-color: white;
@@ -571,7 +580,7 @@ h2{
 
 
   p{
-    padding: 4%;
+    padding: 2%;
     font-size: 13px;
     font-family: myriad-pro, sans-serif;
     color: rgb(255, 255, 255);
@@ -726,7 +735,8 @@ h10{
 }
 #dash-to-footer{
   grid-area: nvdtf;
-
+  margin-left: 0px;
+  margin-right:0px;
   display:grid;
   grid-template-columns: 100%;  /*divide screen into 5 equal columns*/
   grid-template-rows: 10% 3% 2% .5% 6% 10% 5% 4% 1fr 5%;/*sets height of rows*/
