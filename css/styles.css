@@ -554,19 +554,41 @@ h2{
     outline-width: thin;
     outline-color:#e6e6e6;
     outline-style:solid;
-    display:flex;
-    
-    /*margin-right: 80px;*/
+    align-items: center;
+
+  }
+  #contacts, #customers{
+  background-image: url("../img/contacts-customers/white-box.png")
+  background-repeat:no-repeat;
+  outline-width: thin;
+  outline-color:#e6e6e6;
+  outline-style:solid;
+  display: flex;
+  align-items: center;
+
+  display:grid;
+  grid-template-columns: 1fr;  /*divide screen into 4 equal columns*/
+  grid-template-rows: 1fr 1fr 1fr;/*sets height of rows*/
+  grid-template-areas:/*designates areas to certain sections*/
+  'head'
+  'banner'
+  'graph'
   }
 
   .chart{
-    z-index:0;
+    grid-area:graph;
+    z-index:1;
+
   }
   .avatar{
+    grid-area:head;
     z-index:1;
+
   }
   .label{
-    z-index:2;
+    grid-area:banner;
+    z-index:5;
+
   }
   /*section for "did you know?"*/
   #main-did-you-know{/*establishes location in maind, color, outline color and style, text color*/
@@ -671,13 +693,7 @@ h10{
   color: rgb(153, 153, 153);
   line-height: 1.2;
   text-align: right;
-
-
 }
-
-
-
-
 #blog{
   border-right: none;
 }
@@ -723,7 +739,9 @@ h10{
   padding-right: 30px;
 }
 
-
+#footer2-soc:hover{
+  filter: grayscale(100%);
+}
 
 
   /*still in process, set up here for next step, for changing screen sizes*/
