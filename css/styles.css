@@ -1,240 +1,245 @@
 @supports (grid-area:auto){/*uses CSS Grid*/
-  .site{
+.site{
+  display:grid;
+  grid-template-columns: 100%;
+  grid-template-rows:2% 10% 88%;/*sets height of rows*/
+  grid-template-areas:/*designates areas to certain sections*/
+  'hd'/*heading*/
+  'nv'/*nav menu*/
+  'nvdtf'/*dashboard nav*/
+}
+
+
+
+/*section for mini*/
+#header-mini{/*establishes location in hd, color, outline color and style, text color*/
+  grid-column:1/2;
+  background:#2290e9;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8%;
+  /*padding:.3%;
+  */
+}
+.mini-icons{
+  padding-left:.2%;
+  padding: 1%;
+
+}
+#mini{
+  font-size: 14px;
+  font-family: proxima-nova, sans-serif;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  vertical-align: middle;
+  padding-bottom: 8%;
+}
+
+/*section for navigation*/
+#nav-menu{/*establishes location in nvm, flex display for the sprites, color, diagonals in background, outline color and style, text color, padding around sprites in section*/
+  grid-column: 1/2;
+  display:flex;
+  justify-content:space-around;
+  align-items: center;
+  background:repeating-linear-gradient(
+    135deg,
+    #154771,
+    #154771 3px,
+    #0e3f6e 3px,
+    #0e3f6e 5px
+    );
+    padding-left: 30%;
+    padding-right:30%;
+    padding-top: 1%;
+    padding-bottom: 2%;
+
+  }
+
+  .blue-layer{/*still in progress, for the section under sprites with solid color and shadows, sets position and color*/
+
+  z-index:5;
+  background-color: black;
+
+}
+  /*section for dashboard*/
+
+  #dash-to-footer{
+    grid-column: 1/2;
+    grid-area:nvdtf;
+    margin-left: 80px;
+    margin-right:80px;
     display:grid;
-    grid-template-columns: 100%;
-    grid-template-rows:2% 10% 88%;/*sets height of rows*/
+    grid-template-columns: 20% 20% 1fr 1fr 9%;  /*divide screen into 5 equal columns*/
+    grid-template-rows:180px 80px 300px 250px 300px 200px 250px 50px;/*sets height of rows*/
+
+
+    grid-template-areas:
+    'navd navd navd navd navd'
+    'nva nvap nvap nvap nvaa'/*announcements (and paragraph) nav*/
+    'sdt sdt maina maina maina'/*sidebar tasks and main announcements*/
+    'sdr sdr maina maina maina'
+    'sdr sdr mainc mainc mainc'/*sidebar recommendations and main contacts/customers*/
+    'sdr sdr maind maind maind'/*sidebar recs and main "did you know?"*/
+    'ft ft ft ft ft'/*footer section*/
+    'ft2 ft2 ft2 ft2 ft2'
+
+  }
+
+  #nav-dashboard{/*establishes location in nvd, color, outline color and style, text color*/
+    grid-area:navd;
+    background:#33cc66;
+    border-radius: 8px;
+    margin-top: 2%;
+    margin-bottom:5%;
+    /*margin-left: 80px;
+    margin-right: 80px;*/
+  }
+  h1{
+    color:#ffffff;
+    font-size: 36px;
+    font-family: myriad-pro, sans-serif;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    vertical-align: middle;
+    font-weight: normal;
+    padding-left: 3%;
+  }
+  #search-icon{
+    position:absolute;
+    z-index:2;
+    right:115px;
+    top:225px;
+  }
+  #searchbox-icon{
+    position:absolute;
+    z-index:1;
+    width:22%;
+    height:5%;
+    right:105px;
+    top:220px;
+  }
+
+
+  /*section for announcements*/
+  #nav-announcements{/*establishes location in nva, color, outline color and style, text color*/
+    grid-area: nva;
+    background:#ffffff;
+    /*margin-left: 80px;*/
+    outline-width: thin;
+    outline-color:#e6e6e6;
+    outline-style:solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  h11{
+    font-size: 14px;
+    font-family: myriad-pro, sans-serif;
+    color: rgb(254, 127, 19);
+    text-align: left;
+    color:#fe903f;
+  }
+  #nav-announcements-paragraph{/*establishes location in nvap, color, outline color and style, text color*/
+    grid-area:nvap;
+    background:#ffffff;
+    outline-style:solid;
+    outline-width: thin;
+    outline-color:#e6e6e6;
+
+    vertical-align: middle;
+    padding-right: 10%;
+  }
+  #nav-paragraph{
+    font-size: 14px;
+    font-family: myriad-pro, sans-serif;
+    text-align:left;
+    color: rgb(119, 119, 119);
+
+  }
+  #ann-arrows{
+    grid-area:nvaa;
+    outline-width: thin;
+    outline-color:#e6e6e6;
+    outline-style:solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /*margin-right: 80px;*/
+    padding:10%;
+  }
+  /*section for tasks*/
+  #sidebar-tasks{/*establishes location in sdt, color, outline color and style, text color*/
+    grid-area: sdt;
+    background:#ffffff;
+    outline-style:solid;
+    outline-width: thin;
+    outline-color:#e6e6e6;
+    /*margin-left: 80px;*/
+    padding-left: 1%;
+
+    display:grid;
+    grid-template-columns: 10% 50% 40%;  /*divide screen into 5 equal columns*/
+    grid-template-rows: 100px 50px 50px 50px 50px;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
-    'hd'/*heading*/
-    'nv'/*nav menu*/
-    'nvdtf'/*dashboard nav*/
+    'hdt hdt hdt'
+    'num1 num1 num1'
+    'num2 num2 num2'
+    'num3 num3 num3'
+    'num4 num4 num4'
+  }
+  #task-header{
+    grid-area:hdt;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding-right: 5%;
+    padding-left: 3%;
   }
 
 
 
-  /*section for mini*/
-#header-mini{/*establishes location in hd, color, outline color and style, text color*/
-       grid-column:1/2;
-       background:#2290e9;
-       display: flex;
-       align-items: center;
-       justify-content: flex-end;
-       padding-right: 8%;
-       /*padding:.3%;
-       */
-   }
-   .mini-icons{
-     padding-left:.2%;
-       padding: 1%;
+  h7{
+    font-size: 21px;
+    font-family: myriad-pro, sans-serif;
+    color: rgb(36, 152, 243);
+    text-align: left;
+    padding-right: 25%;
+  }
+  .needs-padding{
+    padding-right: 36%;
+  }
+  .needs-padding2{
+    padding-right: 45%;
 
-   }
-   #mini{
-       font-size: 14px;
-       font-family: proxima-nova, sans-serif;
-       color: rgb(255, 255, 255);
-       font-weight: bold;
-       vertical-align: middle;
-       padding-bottom: 8%;
-   }
-
-  /*section for navigation*/
-#nav-menu{/*establishes location in nvm, flex display for the sprites, color, diagonals in background, outline color and style, text color, padding around sprites in section*/
-    grid-column: 1/2;
-    display:flex;
-    justify-content:space-around;
+  }
+  #num1, #num2, #num3, #num4{
+    padding:2%;
+    display:inline-flex;
+    justify-content:space-between;
     align-items: center;
-    background:repeating-linear-gradient(
-      135deg,
-      #154771,
-      #154771 3px,
-      #0e3f6e 3px,
-      #0e3f6e 5px
-      );
-      padding-left: 30%;
-      padding-right:30%;
-      padding-top: 1%;
-      padding-bottom: 2%;
-
-}
-
-    /*  .blue-layer{/*still in progress, for the section under sprites with solid color and shadows, sets position and color
-    position:relative;
-    top:50;
-    left:50;
-    background-color: #144e7f;
-
-    }*/
-    /*section for dashboard*/
-
-#dash-to-footer{
-  grid-column: 1/2;
-  grid-area:nvdtf;
-  margin-left: 80px;
-  margin-right:80px;
-  display:grid;
-  grid-template-columns: 1fr 10% 1fr 1fr 9%;  /*divide screen into 5 equal columns*/
-  grid-template-rows:15% 5% 40% 5% 5% 5% 10% 5%;/*sets height of rows*/
-
-  /*background-image: url(../img/gradient.png);
-  background-position: top;
-  background-repeat: no-repeat;*/
-  grid-template-areas:
-  'navd navd navd navd navd'
-  'nva nvap nvap nvap nvaa'/*announcements (and paragraph) nav*/
-  'sdt sdt maina maina maina'/*sidebar tasks and main announcements*/
-  'sdr sdr maina maina maina'
-  'sdr sdr mainc mainc mainc'/*sidebar recommendations and main contacts/customers*/
-  'sdr sdr maind maind maind'/*sidebar recs and main "did you know?"*/
-  'ft ft ft ft ft'/*footer section*/
-  'ft2 ft2 ft2 ft2 ft2'
-
-}
-
-#nav-dashboard{/*establishes location in nvd, color, outline color and style, text color*/
-      grid-area:navd;
-      background:#33cc66;
-      border-radius: 8px;
-      margin-top: 2%;
-      margin-bottom:5%;
-      /*margin-left: 80px;
-      margin-right: 80px;*/
-}
-h1{
-      color:#ffffff;
-      font-size: 36px;
-      font-family: myriad-pro, sans-serif;
-      color: rgb(255, 255, 255);
-      text-align: left;
-      vertical-align: middle;
-      font-weight: normal;
-      padding-left: 3%;
-}
-#search-icon{
-      position:absolute;
-      z-index:2;
-      right:115px;
-      top:30%;
-}
-#searchbox-icon{
-      position:absolute;
-      z-index:1;
-      width:22%;
-      height:5%;
-      right:105px;
-      top:29%;
-}
-
-
-    /*section for announcements*/
-#nav-announcements{/*establishes location in nva, color, outline color and style, text color*/
-      grid-area: nva;
-      background:#ffffff;
-      /*margin-left: 80px;*/
-      outline-width: thin;
-      outline-color:#e6e6e6;
-      outline-style:solid;
-      padding: 10%;
-}
-h11{
-  font-size: 14px;
-  font-family: myriad-pro, sans-serif;
-  color: rgb(254, 127, 19);
-  text-align: left;
-  color:#fe903f;
-}
-#nav-announcements-paragraph{/*establishes location in nvap, color, outline color and style, text color*/
-      grid-area:nvap;
-      background:#ffffff;
-      outline-style:solid;
-      outline-width: thin;
-      outline-color:#e6e6e6;
-      padding: 2%;
-      vertical-align: middle;
-      padding-right: 10%;
-}
-#nav-paragraph{
-  font-size: 14px;
-  font-family: myriad-pro, sans-serif;
-  text-align:left;
-  color: rgb(119, 119, 119);
-}
-#ann-arrows{
-      grid-area:nvaa;
-      outline-width: thin;
-      outline-color:#e6e6e6;
-      outline-style:solid;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      /*margin-right: 80px;*/
-      padding:10%;
-}
-    /*section for tasks*/
-#sidebar-tasks{/*establishes location in sdt, color, outline color and style, text color*/
-      grid-area: sdt;
-      background:#ffffff;
-      outline-style:solid;
-      outline-width: thin;
-      outline-color:#e6e6e6;
-      /*margin-left: 80px;*/
-      padding-left: 1%;
-
-      display:grid;
-      grid-template-columns: 10% 50% 40%;  /*divide screen into 5 equal columns*/
-      grid-template-rows: 18% 1fr 1fr 1fr 1fr;/*sets height of rows*/
-      grid-template-areas:/*designates areas to certain sections*/
-      'hdt hdt hdt'
-      'num1 num1 num1'
-      'num2 num2 num2'
-      'num3 num3 num3'
-      'num4 num4 num4'
-}
-#task-header{
-      grid-area:hdt;
-      display: flex;
-      align-items: center;
-      justify-content:space-between;
-      padding-right: 5%;
-      padding-left: 3%;
-}
-
-
-
-h7{
-      font-size: 21px;
-      font-family: myriad-pro, sans-serif;
-      color: rgb(36, 152, 243);
-      text-align: left;
-
-
-      /*  margin-bottom: 3px;*/
-}
-#num1, #num2, #num3, #num4{
-      padding:2%;
-      display:inline-flex;
-      justify-content:space-between;
-      align-items: center;
-      border-bottom-style: solid;
-      border-bottom-color:#eeeeee;
-      border-bottom-width: thin;
-}
-#num1:hover, #num2:hover, #num3:hover, #num4:hover{
-  filter:grayscale(100%);
-   }
-#num1{
-      grid-area:num1;
-}
-#num2{
-      grid-area:num2;
-}
-#num3{
-      grid-area:num3;
-}
-#num4{
-      grid-area:num4;
-      border:none;
-}
+    border-bottom-style: solid;
+    border-bottom-color:#eeeeee;
+    border-bottom-width: thin;
+  }
+  #num1:hover, #num2:hover, #num3:hover, #num4:hover{
+    filter:grayscale(100%);
+  }
+  #num1{
+    grid-area:num1;
+  }
+  #num2{
+    grid-area:num2;
+  }
+  #num3{
+    grid-area:num3;
+  }
+  #num4{
+    grid-area:num4;
+    border:none;
+  }
   /*section for recommendations*/
-#sidebar-recs{/*establishes location in sdr, color, outline color and style, text color*/
+  #sidebar-recs{/*establishes location in sdr, color, outline color and style, text color*/
     grid-area: sdr;
     background:#ffffff;
     outline-style:solid;
@@ -243,7 +248,7 @@ h7{
     /*margin-left: 80px;*/
     display:grid;
     grid-template-columns: 30% 70%;  /*divide screen into 5 equal columns*/
-    grid-template-rows: 18% 1fr 1fr 1fr 1fr;/*sets height of rows*/
+    grid-template-rows:  100px 60px 60px 60px 60px;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
     'hdt hdt'
     'art1 art1'
@@ -251,85 +256,85 @@ h7{
     'art3 art3'
     'art4 art4'
 
-}
+  }
 
-#rec-heading{
+  #rec-heading{
     grid-area:hdt;
     padding-left: 3%;
 
-}
+  }
 
 
-#art1:hover, #art2:hover,#art3:hover,#art4:hover{
-  filter:grayscale(100%);
+  #art1:hover, #art2:hover,#art3:hover,#art4:hover{
+    filter:grayscale(100%);
 
-}
+  }
 
-h4:hover{
-  color:black;
-}
-#art1, #art2, #art3, #art4{
-  border-bottom-style: solid;
-  border-bottom-color:#eeeeee;
-  border-bottom-width: thin;
-  height:50%;
-  display: inline-flex;
-  align-items:center;
+  h4:hover{
+    color:black;
+  }
+  #art1, #art2, #art3, #art4{
+    border-bottom-style: solid;
+    border-bottom-color:#eeeeee;
+    border-bottom-width: thin;
+    height:50%;
+    display: inline-flex;
+    align-items:center;
 
-}
-#art1{
+  }
+  #art1{
     grid-area:art1;
     display:flex;
     padding: 3%;
     justify-content:flex-start;
     align-content: center;
-}
-#art2{
+  }
+  #art2{
     grid-area:art2;
     display:flex;
     padding: 3%;
     justify-content:flex-start;
     align-content: center;
 
-}
-#art3{
+  }
+  #art3{
     grid-area:art3;
     display:flex;
     padding: 3%;
     justify-content:flex-start;
     align-content: center;
 
-}
-#art4{
+  }
+  #art4{
     grid-area:art4;
     display:flex;
     padding: 3%;
     justify-content:flex-start;
     align-content: center;
 
-}
+  }
 
-.text{
-margin-left: 2%;
+  .text{
+    margin-left: 2%;
 
-}
-h4{
+  }
+  h4{
     font-size: 16px;
     font-family: myriad-pro, sans-serif;
     color: rgb(153, 153, 153);
     line-height: .5;
     text-align: left;
-}
-h5{
+  }
+  h5{
     font-size: 10px;
     font-family: myriad-pro, sans-serif;
     color: rgb(153, 153, 153);
     line-height: .4;
     text-align: left;
-}
+  }
 
   /*section for analytics*/
-#main-analytics{/*establishes location in maina, color, outline color and style, flex display for the text input (holding place for the images), aligns in the middle, text color*/
+  #main-analytics{/*establishes location in maina, color, outline color and style, flex display for the text input (holding place for the images), aligns in the middle, text color*/
     grid-area:maina;
     background:#ffffff;
     outline-style:solid;
@@ -338,6 +343,7 @@ h5{
     /*margin-right: 80px;*/
     padding-left: 5%;
     padding-right: 3%;
+    padding-bottom: 5%;
 
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;  /*divide screen into 4 equal columns*/
@@ -349,22 +355,22 @@ h5{
     'grph grph grph chn'
     'grph grph grph chn'
     'fb tw fr go'
-}
-h2{
-  font-size: 32px;
-  font-family: myriad-pro, sans-serif;
-  color: rgb(36, 152, 244);
-  text-align: left;
-  font-weight:normal;
-  line-height: 1.2;
-}
-#hdt{
+  }
+  h2{
+    font-size: 32px;
+    font-family: myriad-pro, sans-serif;
+    color: rgb(36, 152, 244);
+    text-align: left;
+    font-weight:normal;
+    line-height: 1.2;
+  }
+  #hdt{
     grid-area:hdt;
   }
-#a-title{
+  #a-title{
     grid-area:title;
   }
-#date{
+  #date{
     grid-area:drop;
     margin-right: 5%;
 
@@ -375,130 +381,121 @@ h2{
     outline-style:solid;
     outline-width: thin;
     outline-color:#e6e6e6;
-      padding: 11px;
-      padding-left: 10px;
-      padding-right: 40px;
-      padding-bottom: 4px;
-      font-size: 16px;
-      cursor: pointer;
-      font-size: 13px;
-      font-family: myriad-pro, sans-serif;
-      color: rgb(102, 102, 102);
-      line-height: 1.2;
-      text-align: left;
+    padding: 11px;
+    padding-left: 10px;
+    padding-right: 40px;
+    padding-bottom: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: myriad-pro, sans-serif;
+    color: rgb(102, 102, 102);
+    line-height: 1.2;
+    text-align: left;
   }
 
   .dropdown {
-      position: relative;
-      display: inline-block;
+    position: relative;
+    display: inline-block;
 
   }
 
   .dropdown-content {
-      display: none;
-      position: absolute;
-      right: 0;
-      background-color: white;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
   }
 
   .dropdown-content a {      outline-style:solid;
-      outline-width: thin;
-      outline-color:#e6e6e6;
-      padding: 11px 11px;
-      text-decoration: none;
-      font-size: 13px;
-      font-family: myriad-pro, sans-serif;
-      color: rgb(102, 102, 102);
-      line-height: 1.2;
-      text-align: left;
-      display: block;
+    outline-width: thin;
+    outline-color:#e6e6e6;
+    padding: 11px 11px;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: myriad-pro, sans-serif;
+    color: rgb(102, 102, 102);
+    line-height: 1.2;
+    text-align: left;
+    display: block;
   }
 
   .dropdown-content a:hover {background-color: white;}
   .dropdown:hover .dropdown-content {display: block;}
   .dropdown:hover .dropbtn {background-color: white;}
-#bargraph{
+  #bargraph{
     grid-area:grph;
     width:100%;
   }
-#pies{
-  grid-area:chn;
-  border-left-style: solid;
-  border-left-width: thin;
-  border-left-color:#dddddd;
-  align-items: center;
-  padding-left: 20%;
-}
-/*#social{
-  grid-area:so;
-  display: flex;
-  align-items:center;
-  align-content: center;
-  justify-content:center;
-  margin-right: 6%;
+  #pies{
+    grid-area:chn;
+    border-left-style: solid;
+    border-left-width: thin;
+    border-left-color:#dddddd;
+    align-items: center;
+    padding-left: 20%;
+  }
 
-
-}*/
-.checkbox input[type="checkbox"] {
+  .checkbox input[type="checkbox"] {
     opacity: 0;
-}
+  }
 
-.checkbox label {
+  .checkbox label {
     position: absolute;
     display: inline-block;
 
     /*16px width of fake checkbox + 6px distance between fake checkbox and text*/
 
-}
+  }
 
-.checkbox label::before,
-.checkbox label::after {
+  .checkbox label::before,
+  .checkbox label::after {
     position: absolute;
     content:url('../img/graph/unchecked.png');
 
     /*Needed for the line-height to take effect*/
     display:inline-block;
-}
+  }
 
-/*Outer box of the fake checkbox*/
-.checkbox label::before{
-  width: 18px; height: 18px;
+  /*Outer box of the fake checkbox*/
+  .checkbox label::before{
+    width: 18px; height: 18px;
 
 
     /*(24px line-height - 16px height of fake checkbox) / 2 - 1px for the border
-     *to vertically center it.
-     */
+    *to vertically center it.
+    */
 
-}
+  }
 
-/*Checkmark of the fake checkbox*/
-.checkbox label::after {
+  /*Checkmark of the fake checkbox*/
+  .checkbox label::after {
     width: 23px;
     height: 21px;
 
-}
+  }
 
-/*Hide the checkmark by default*/
-.checkbox input[type="checkbox"] + label::after {
+  /*Hide the checkmark by default*/
+  .checkbox input[type="checkbox"] + label::after {
     content: none;
-}
+  }
 
-/*Unhide on the checked state*/
-.checkbox input[type="checkbox"]:checked + label::after {
+  /*Unhide on the checked state*/
+  .checkbox input[type="checkbox"]:checked + label::after {
     content: url('../img/graph/checked.png');
 
-}
+  }
 
-/*Adding focus styles on the outer-box of the fake checkbox*/
-.checkbox input[type="checkbox"]:focus + label::before {
+  /*Adding focus styles on the outer-box of the fake checkbox*/
+  .checkbox input[type="checkbox"]:focus + label::before {
     content: url('../img/graph/unchecked.png');
 
-}
+  }
 
-#fb, #tw, #fr, #go{
+  #fb, #tw, #fr, #go{
     display: flex;
     justify-content:center;
     align-items: center;
@@ -518,14 +515,12 @@ h2{
     grid-area: go;
   }
   h6{
-    padding-top: 2%;
     padding-bottom: 2%;
-    padding-left: 7%;
-    padding-right: 7%;
+
+    padding-top: 2%;
     border-radius: 5px;
     margin-left: 15%;
     margin-top: 35%;
-    margin-right: 10%;
     border-color: inherit;
     font-size: 12px;
     font-family: myriad-pro, sans-serif;
@@ -542,7 +537,7 @@ h2{
   }
   #go-h{
     background-color: #31cc66;
-}
+  }
   h3{
     font-size: 13px;
     font-family: myriad-pro, sans-serif;
@@ -566,22 +561,20 @@ h2{
     'graph graph'
   }
   #contacts, #customers{
-  /*background-image: url("../img/contacts-customers/white-box.png");
-  background-repeat:no-repeat;*/
-  outline-width: thin;
-  outline-color:#e6e6e6;
-  outline-style:solid;
-  margin-top:10%;
-  margin-left: 12%;
-  margin-right: 12%;
-  justify-content: center;
-
+    outline-width: thin;
+    outline-color:#e6e6e6;
+    outline-style:solid;
+    margin-top:10%
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 10%;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
   }
-/*.box{
-grid-row:head;
-grid-column:graph;
-  z-index:0;
-}*/
+#contacts:hover, #customers:hover{
+filter: grayscale(100%);
+}
   .chart{
     grid-area:graph;
     z-index:2;
@@ -659,43 +652,43 @@ grid-column:graph;
 
   }
 
-#see{
-  margin-top: 5px;
-}
-#watch, #version2{
-  margin-top:10px;
-}
-.contacts-customer:hover{
-  filter:grayscale(100%);
+  #see{
+    margin-top: 5px;
+  }
+  #watch, #version2{
+    margin-top:10px;
+  }
+  .contacts-customer:hover{
+    filter:grayscale(100%);
 
-}
-#footer2{
-  grid-area:ft2;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  /*margin-left: 80px;
-  margin-right: 80px;*/
-  outline-width: thin;
-  outline-color:#e6e6e6;
-  outline-style:solid;
-  border-top-width: thick;
-  border-top-color:#e6e6e6;
-  border-top-style:solid;
-}
-h8{
-  font-size: 14px;
-  font-family: proxima-nova,sans-serif;
-  color: rgb(153, 153, 153);
-  line-height: 1.2;
-  text-align: left;
-  border-right-width: thin;
-  border-right-color:#e6e6e6;
-  border-right-style:solid;
-  padding-right: 5px;
-  padding-left: 2px;
-}
-h9{
+  }
+  #footer2{
+    grid-area:ft2;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /*margin-left: 80px;
+    margin-right: 80px;*/
+    outline-width: thin;
+    outline-color:#e6e6e6;
+    outline-style:solid;
+    border-top-width: thick;
+    border-top-color:#e6e6e6;
+    border-top-style:solid;
+  }
+  h8{
+    font-size: 14px;
+    font-family: proxima-nova,sans-serif;
+    color: rgb(153, 153, 153);
+    line-height: 1.2;
+    text-align: left;
+    border-right-width: thin;
+    border-right-color:#e6e6e6;
+    border-right-style:solid;
+    padding-right: 5px;
+    padding-left: 2px;
+  }
+  h9{
     font-size: 14px;
     font-family: proxima-nova,sans-serif;
     color: rgb(36, 152, 242);
@@ -704,191 +697,198 @@ h9{
     text-align: right;
     vertical-align: middle;
 
-}
-h10{
-  font-size: 14px;
-  font-family:proxima-nova,sans-serif;
-  color: rgb(153, 153, 153);
-  line-height: 1.2;
-  text-align: right;
-}
-#blog{
-  border-right: none;
-}
-#up{
-  padding-left: 120px;
-}
-#footer2-prom{
-  display:flex;
-  align-items: center;
-  justify-content:space-between;
-  outline-width: thin;
-  outline-color:#e6e6e6;
-  outline-style:solid;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  padding-left: 30px;
-  padding-right: 50px;
-}
-#prom-text{
-   align-items: center;
-}
-#footer2-log{
-  display:flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top:6px;
-  padding-bottom: 6px;
-  padding-right: 50px;
+  }
+  h10{
+    font-size: 14px;
+    font-family:proxima-nova,sans-serif;
+    color: rgb(153, 153, 153);
+    line-height: 1.2;
+    text-align: right;
+  }
+  #blog{
+    border-right: none;
+  }
+  #up{
+    padding-left: 120px;
+  }
+  #footer2-prom{
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+    outline-width: thin;
+    outline-color:#e6e6e6;
+    outline-style:solid;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 30px;
+    padding-right: 50px;
+  }
+  #prom-text{
+    align-items: center;
+  }
+  #footer2-log{
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top:6px;
+    padding-bottom: 6px;
+    padding-right: 50px;
 
 
-}
-#avatar{
-  padding-right: 15px;
-  padding-left: 10px;
-}
-#footer2-soc{
-  padding-top:18px;
-  padding-bottom: 18px;
-  outline-width: thin;
-  outline-color:#e6e6e6;
-  outline-style:solid;
-  padding-left: 35px;
-  padding-right: 30px;
-}
+  }
+  #avatar{
+    padding-right: 15px;
+    padding-left: 10px;
+  }
+  #footer2-soc{
+    padding-top:18px;
+    padding-bottom: 18px;
+    outline-width: thin;
+    outline-color:#e6e6e6;
+    outline-style:solid;
+    padding-left: 35px;
+    padding-right: 30px;
+  }
 
-#footer2-soc:hover{
-  filter: grayscale(100%);
-}
+  #footer2-soc:hover{
+    filter: grayscale(100%);
+  }
 
 
   /*still in process, set up here for next step, for changing screen sizes*/
   @media screen and (max-width:776px){
-  .site{
-  display:grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 5% 25% 70%;
-  grid-template-areas:
-  'hd'/*heading*/
-  'nv'/*nav menu*/
-  'nvdtf'/*sidebar tasks and main announcements*/
-}
-#header-mini{
-  grid-area:hd;
-}
-#nav-menu{
-  grid-area: nv;
-}
-#dash-to-footer{
-  grid-area: nvdtf;
-  margin-left: 0px;
-  margin-right:0px;
-  display:grid;
-  grid-template-columns: 100%;  /*divide screen into 5 equal columns*/
-  grid-template-rows: 10% 1% 5% .5% 6% 15% 5% 4% 1fr 5%;/*sets height of rows*/
-  grid-template-areas:
-  'navd'
-  'nva'
-  'nvap' /*announcements (and paragraph) nav*/
-  'sdt'
-   /*sidebar tasks and main announcements*/
-  'sdr'
-  'maina'
-  'mainc'/*sidebar recommendations and main contacts/customers*/
-  'maind'/*sidebar recs and main "did you know?"*/
-  'ft'/*footer section*/
-  'ft2'
+    .site{
+      display:grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 5% 25% 70%;
+      grid-template-areas:
+      'hd'/*heading*/
+      'nv'/*nav menu*/
+      'nvdtf'/*sidebar tasks and main announcements*/
+    }
+    #header-mini{
+      grid-area:hd;
+    }
+    #nav-menu{
+      grid-area: nv;
+    }
+    #dash-to-footer{
+      grid-area: nvdtf;
+      margin-left: 0px;
+      margin-right:0px;
+      display:grid;
+      grid-template-columns: 100%;  /*divide screen into 5 equal columns*/
+      grid-template-rows: 10% 1% 5% .5% 6% 15% 5% 4% 1fr 5%;/*sets height of rows*/
+      grid-template-areas:
+      'navd'
+      'nva'
+      'nvap' /*announcements (and paragraph) nav*/
+      'sdt'
+      /*sidebar tasks and main announcements*/
+      'sdr'
+      'maina'
+      'mainc'/*sidebar recommendations and main contacts/customers*/
+      'maind'/*sidebar recs and main "did you know?"*/
+      'ft'/*footer section*/
+      'ft2'
 
-  }
-  #nav-dashboard{
-        grid-area: navd;
-      }
-      #search-icon{
-            position:absolute;
-            z-index:2;
-            right:34px;
-            top:30%;
-      }
-      #searchbox-icon{
-            position:absolute;
-            z-index:1;
-            width:35%;
-            height:5%;
-            right:30px;
-            top:29%;
-      }
-  #sidebar-tasks{
-            grid-area: sdt;
-            text-align:left;
-}
-#nav-announcements{
+    }
+    #nav-dashboard{
+      grid-area: navd;
+    }
+    #search-icon{
+      position:absolute;
+      z-index:2;
+      right:34px;
+      top:30%;
+    }
+    #searchbox-icon{
+      position:absolute;
+      z-index:1;
+      width:35%;
+      height:5%;
+      right:30px;
+      top:29%;
+    }
+    #sidebar-tasks{
+      grid-area: sdt;
+      text-align:left;
+    }
+
+    #nav-announcements{
       grid-area: nva;
 
-}
-#nav-announcements-paragraph{
+    }
+    #nav-announcements-paragraph{
       grid-area:nvap;
       align-items: center;
 
 
-}
-#ann-arrows{
+    }
+    #ann-arrows{
       grid-area:nva;
       padding-left: 70%;
     }
-#sidebar-recs{
-        grid-area: sdr;
-        display: flex;
-        flex-direction: column;
-        align-items:stretch;
+    #sidebar-recs{
+      grid-area: sdr;
+      display: flex;
+      flex-direction: column;
+      align-items:stretch;
+    }
+    .text{
+      padding-left: 20%;
+    }
+    #main-analytics{
+      grid-area:maina;
+      flex-direction: column;
+    }
+    #main-contacts{
+      grid-area: mainc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 10%;
+      outline-style:none;
 
-      }
-#main-analytics{
-          grid-area:maina;
-          flex-direction: column;
-}
-#main-contacts{
-  grid-area: mainc;
-  flex-direction: column;
-  align-items: center;
-}
-#main-did-you-know{
-  grid-area: maind;
-  flex-direction: row;
+    }
+    #main-did-you-know{
+      grid-area: maind;
+      flex-direction: row;
 
-}
-#footer{
-  grid-area:ft;
-  flex-direction: column;
+    }
+    #footer{
+      grid-area:ft;
+      flex-direction: column;
 
-}
-#footer2{
-  grid-area:ft2;
-  flex-direction: column;
-  outline:none;
-}
-}
-/*Resources Used:
+    }
+    #footer2{
+      grid-area:ft2;
+      flex-direction: column;
+      outline:none;
+    }
+  }
+  /*Resources Used:
 
-for stripes in nav bar: https://css-tricks.com/stripes-css/
-for spritesheet: http://css.spritegen.com/
-for Myriad Pro font: https://typekit.com/fonts/myriad/details/myriad-pro-light
-for positioning: https://www.w3schools.com/cssref/pr_pos_z-index.asp
-for fr:
-https://alligator.io/css/css-grid-layout-fr-unit/
-for links:
-https://www.w3schools.com/html/html_links.asp
-for dropdown:
-https://www.w3schools.com/howto/howto_custom_select.asp
-https://www.w3schools.com/css/css_dropdowns.asp
-https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_right
-for grid:
-https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#Fixed_and_flexible_track_sizes
-for nested grids:
-https://rachelandrew.co.uk/archives/2015/02/04/css-grid-layout-creating-complex-grids/
-for checkbox:https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
-https://medium.com/claritydesignsystem/pure-css-accessible-checkboxes-and-radios-buttons-54063e759bb3
-for searchbar: https://www.w3schools.com/howto/howto_css_searchbar.asp
-to change cursor:
-https://www.w3schools.com/css/tryit.asp?filename=trycss_cursor
-for meta tags:https://www.w3schools.com/tags/tag_meta.asp
-*/
+  for stripes in nav bar: https://css-tricks.com/stripes-css/
+  for spritesheet: http://css.spritegen.com/
+  for Myriad Pro font: https://typekit.com/fonts/myriad/details/myriad-pro-light
+  for positioning: https://www.w3schools.com/cssref/pr_pos_z-index.asp
+  for fr:
+  https://alligator.io/css/css-grid-layout-fr-unit/
+  for links:
+  https://www.w3schools.com/html/html_links.asp
+  for dropdown:
+  https://www.w3schools.com/howto/howto_custom_select.asp
+  https://www.w3schools.com/css/css_dropdowns.asp
+  https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_right
+  for grid:
+  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#Fixed_and_flexible_track_sizes
+  for nested grids:
+  https://rachelandrew.co.uk/archives/2015/02/04/css-grid-layout-creating-complex-grids/
+  for checkbox:https://www.w3schools.com/howto/howto_css_custom_checkbox.asp
+  https://medium.com/claritydesignsystem/pure-css-accessible-checkboxes-and-radios-buttons-54063e759bb3
+  for searchbar: https://www.w3schools.com/howto/howto_css_searchbar.asp
+  to change cursor:
+  https://www.w3schools.com/css/tryit.asp?filename=trycss_cursor
+  for meta tags:https://www.w3schools.com/tags/tag_meta.asp
+  */
