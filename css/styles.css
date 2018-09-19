@@ -817,7 +817,9 @@ filter: grayscale(100%);
 
     #nav-announcements{
       grid-area: nva;
-
+      align-items:center;
+      justify-content:space-between;
+      padding-left: 10%;
     }
     #nav-announcements-paragraph{
       grid-area:nvap;
