@@ -6,7 +6,7 @@
   grid-template-areas:/*designates areas to certain sections*/
   'hd'/*heading*/
   'nv'/*nav menu*/
-  'nvdtf'/*dashboard nav*/
+  'nvdtf'/*dashboard nav to footer*/
 }
 
 
@@ -61,32 +61,30 @@
   z-index:5;
   background-color: black;
 
-}
-  /*section for dashboard*/
-
-  #dash-to-footer{
+}/*closes section for nav menu*/
+  #dash-to-footer{/*section of dash to footer, for margining purposes*/
     grid-column: 1/2;
     grid-area:nvdtf;
     margin-left: 80px;
     margin-right:80px;
     display:grid;
-    grid-template-columns: 20% 20% 1fr 1fr 9%;  /*divide screen into 5 equal columns*/
+    grid-template-columns: 20% 20% 1fr 1fr 9%;  /*divide screen into 5 variant-sized columns*/
     grid-template-rows:180px 80px 300px 250px 300px 200px 250px 50px;/*sets height of rows*/
 
 
     grid-template-areas:
-    'navd navd navd navd navd'
+    'navd navd navd navd navd'/*dashboard*/
     'nva nvap nvap nvap nvaa'/*announcements (and paragraph) nav*/
     'sdt sdt maina maina maina'/*sidebar tasks and main announcements*/
-    'sdr sdr maina maina maina'
+    'sdr sdr maina maina maina'/*sidebar recommendations and main announcements*/
     'sdr sdr mainc mainc mainc'/*sidebar recommendations and main contacts/customers*/
     'sdr sdr maind maind maind'/*sidebar recs and main "did you know?"*/
     'ft ft ft ft ft'/*footer section*/
-    'ft2 ft2 ft2 ft2 ft2'
+    'ft2 ft2 ft2 ft2 ft2'/*footer2 section*/
 
-  }
+  }/*closes section for dash-to-footer section*/
 
-  #nav-dashboard{/*establishes location in nvd, color, outline color and style, text color*/
+  #nav-dashboard{/*establishes location in navd, color, outline color and style, text color, margins*/
     grid-area:navd;
     background:#33cc66;
     border-radius: 8px;
@@ -95,7 +93,7 @@
     /*margin-left: 80px;
     margin-right: 80px;*/
   }
-  h1{
+  h1{/*establishes h1 color, font, alignment and padding*/
     color:#ffffff;
     font-size: 36px;
     font-family: myriad-pro, sans-serif;
@@ -105,13 +103,13 @@
     font-weight: normal;
     padding-left: 3%;
   }
-  #search-icon{
+  #search-icon{/*establishes search magnifying glass location*/
     position:absolute;
     z-index:2;
     right:115px;
     top:225px;
   }
-  #searchbox-icon{
+  #searchbox-icon{/*establishes searchbox location*/
     position:absolute;
     z-index:1;
     width:22%;
@@ -122,7 +120,7 @@
 
 
   /*section for announcements*/
-  #nav-announcements{/*establishes location in nva, color, outline color and style, text color*/
+  #nav-announcements{/*establishes location in nva, color, outline color and style, text color, alignment*/
     grid-area: nva;
     background:#ffffff;
     /*margin-left: 80px;*/
@@ -140,24 +138,23 @@
     text-align: left;
     color:#fe903f;
   }
-  #nav-announcements-paragraph{/*establishes location in nvap, color, outline color and style, text color*/
+  #nav-announcements-paragraph{/*establishes location in nvap, color, outline color and style, text color, alignment and padding*/
     grid-area:nvap;
     background:#ffffff;
     outline-style:solid;
     outline-width: thin;
     outline-color:#e6e6e6;
-
     vertical-align: middle;
     padding-right: 10%;
   }
-  #nav-paragraph{
+  #nav-paragraph{/*establishes font, color, alignment of paragraph in announcements section*/
     font-size: 14px;
     font-family: myriad-pro, sans-serif;
     text-align:left;
     color: rgb(119, 119, 119);
 
   }
-  #ann-arrows{
+  #ann-arrows{/*establishes arrows outline, alignment, padding in announcements section*/
     grid-area:nvaa;
     outline-width: thin;
     outline-color:#e6e6e6;
@@ -177,7 +174,7 @@
     outline-color:#e6e6e6;
     /*margin-left: 80px;*/
     padding-left: 1%;
-
+    /*sets up nested grid*/
     display:grid;
     grid-template-columns: 10% 50% 40%;  /*divide screen into 5 equal columns*/
     grid-template-rows: 100px 50px 50px 50px 50px;/*sets height of rows*/
@@ -245,7 +242,7 @@
     outline-style:solid;
     outline-width: thin;
     outline-color:#e6e6e6;
-    /*margin-left: 80px;*/
+    /*sets up nested grid*/
     display:grid;
     grid-template-columns: 30% 70%;  /*divide screen into 5 equal columns*/
     grid-template-rows:  100px 60px 60px 60px 60px;/*sets height of rows*/
@@ -340,11 +337,11 @@
     outline-style:solid;
     outline-width: thin;
     outline-color:#e6e6e6;
-    /*margin-right: 80px;*/
     padding-left: 5%;
     padding-right: 3%;
     padding-bottom: 5%;
 
+    /*sets up nested grid*/
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;  /*divide screen into 4 equal columns*/
     grid-template-rows: 20% 20% 30% 10% 15% 5%;/*sets height of rows*/
@@ -364,6 +361,8 @@
     font-weight:normal;
     line-height: 1.2;
   }
+
+  /*sets up areas in grid for heading, title, and dropdown*/
   #hdt{
     grid-area:hdt;
   }
@@ -373,8 +372,8 @@
   #date{
     grid-area:drop;
     margin-right: 5%;
-
   }
+  /*Dropdown Menu Set-Up*/
   .dropbtn {
     background-image: url('../img/graph/date.png');
     background-repeat:no-repeat;
@@ -393,13 +392,10 @@
     line-height: 1.2;
     text-align: left;
   }
-
   .dropdown {
     position: relative;
     display: inline-block;
-
   }
-
   .dropdown-content {
     display: none;
     position: absolute;
@@ -409,7 +405,6 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
-
   .dropdown-content a {      outline-style:solid;
     outline-width: thin;
     outline-color:#e6e6e6;
@@ -422,10 +417,11 @@
     text-align: left;
     display: block;
   }
-
   .dropdown-content a:hover {background-color: white;}
   .dropdown:hover .dropdown-content {display: block;}
   .dropdown:hover .dropbtn {background-color: white;}
+
+/*sets up bargraph and piegraph areas and outlines*/
   #bargraph{
     grid-area:grph;
     width:100%;
@@ -439,69 +435,54 @@
     padding-left: 20%;
   }
 
+  /*Check box set-up, padding, overlapping boxes*/
+  .checkbox{
+    padding-bottom: 8%;
+    padding-left: 1%;
+    padding-right: 1%;
+  }
   .checkbox input[type="checkbox"] {
     opacity: 0;
   }
-
   .checkbox label {
     position: absolute;
     display: inline-block;
-
-    /*16px width of fake checkbox + 6px distance between fake checkbox and text*/
-
   }
-
   .checkbox label::before,
   .checkbox label::after {
     position: absolute;
     content:url('../img/graph/unchecked.png');
-
-    /*Needed for the line-height to take effect*/
     display:inline-block;
   }
-
-  /*Outer box of the fake checkbox*/
+  /*fake checkbox outer box*/
   .checkbox label::before{
     width: 18px; height: 18px;
-
-
-    /*(24px line-height - 16px height of fake checkbox) / 2 - 1px for the border
-    *to vertically center it.
-    */
-
   }
-
-  /*Checkmark of the fake checkbox*/
+  /*fake checkbox checkmark*/
   .checkbox label::after {
     width: 23px;
     height: 21px;
-
   }
-
-  /*Hide the checkmark by default*/
+  /*checkmark hidden by default*/
   .checkbox input[type="checkbox"] + label::after {
     content: none;
   }
-
-  /*Unhide on the checked state*/
+  /*checked state unhidden*/
   .checkbox input[type="checkbox"]:checked + label::after {
     content: url('../img/graph/checked.png');
-
   }
-
-  /*Adding focus styles on the outer-box of the fake checkbox*/
+  /*outer-box styles for the fake checkbox*/
   .checkbox input[type="checkbox"]:focus + label::before {
     content: url('../img/graph/unchecked.png');
-
   }
-
+/*sets up social media areas*/
   #fb, #tw, #fr, #go{
     display: flex;
     justify-content:center;
     align-items: center;
     margin-right: 10px;
-
   }
+  /*sets up social media areas in the grid*/
   #fb{
     grid-area: fb;
   }
@@ -514,6 +495,8 @@
   #go{
     grid-area: go;
   }
+
+  /*sets up h6 padding, font, color*/
   h6{
     padding-bottom: 2%;
 
@@ -526,6 +509,7 @@
     font-family: myriad-pro, sans-serif;
     color: rgb(255, 255, 255);
   }
+  /*sets up heading background colors for social media*/
   #fb-h{
     background-color: #114570;
   }
@@ -538,6 +522,7 @@
   #go-h{
     background-color: #31cc66;
   }
+  /*sets up h3 padding, font, color*/
   h3{
     font-size: 13px;
     font-family: myriad-pro, sans-serif;
@@ -552,14 +537,16 @@
     outline-width: thin;
     outline-color:#e6e6e6;
     outline-style:solid;
+    /*sets up nested grid*/
     display:grid;
-    grid-template-columns: 1fr 1fr;  /*divide screen into 4 equal columns*/
+    grid-template-columns: 1fr 1fr;  /*divide screen into 2 equal columns*/
     grid-template-rows: 1fr 1fr 1fr;/*sets height of rows*/
     grid-template-areas:/*designates areas to certain sections*/
     'head head'
     'banner banner'
     'graph graph'
   }
+  /*sets up outline, margins, padding, alignment and flex for contacts and customer divs*/
   #contacts, #customers{
     outline-width: thin;
     outline-color:#e6e6e6;
@@ -572,9 +559,11 @@
     align-items:center;
     justify-content: space-between;
   }
+  /*hover events for customers and contacts divs*/
 #contacts:hover, #customers:hover{
 filter: grayscale(100%);
 }
+/*gives attributes to chart, avatar, and label for customers and contacts section, sets z-indexes and location in grid*/
   .chart{
     grid-area:graph;
     z-index:2;
@@ -612,16 +601,13 @@ filter: grayscale(100%);
     display:flex;
     align-items: center;
     justify-content: space-between;
-
-
-    /*margin-right: 80px;*/
     border-radius: 22px;
     border-color: white;
     border-style:solid;
     border-width:18px;
   }
 
-
+/*gives attributes for general paragraph style in "did you know?" section, with font style, color, padding, etc.*/
   p{
     padding: 2%;
     font-size: 13px;
@@ -646,12 +632,10 @@ filter: grayscale(100%);
     display:flex;
     justify-content: space-around;
     align-items: center;
-    /*margin-left: 80px;
-    margin-right: 80px;*/
     margin-bottom:20px;
 
   }
-
+/*sets attributes for 3 images in footer1*/
   #see{
     margin-top: 5px;
   }
@@ -662,13 +646,13 @@ filter: grayscale(100%);
     filter:grayscale(100%);
 
   }
+  /*sets attributes for footer2, grid area and alignment, border and outlines*/
+
   #footer2{
     grid-area:ft2;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /*margin-left: 80px;
-    margin-right: 80px;*/
     outline-width: thin;
     outline-color:#e6e6e6;
     outline-style:solid;
@@ -676,6 +660,8 @@ filter: grayscale(100%);
     border-top-color:#e6e6e6;
     border-top-style:solid;
   }
+
+  /*sets up h8, h9, and h10 padding, font, colors, borders*/
   h8{
     font-size: 14px;
     font-family: proxima-nova,sans-serif;
@@ -705,6 +691,7 @@ filter: grayscale(100%);
     line-height: 1.2;
     text-align: right;
   }
+  /*padding and borders for elements in footer 2, setting outlines, borders, and alignments*/
   #blog{
     border-right: none;
   }
@@ -749,7 +736,7 @@ filter: grayscale(100%);
     padding-left: 35px;
     padding-right: 30px;
   }
-
+  /*hover event for social section in footer2*/
   #footer2-soc:hover{
     filter: grayscale(100%);
   }
@@ -758,6 +745,7 @@ filter: grayscale(100%);
   /*still in process, set up here for next step, for changing screen sizes*/
   @media screen and (max-width:776px){
     .site{
+      /*sets up grid for mobile responsiveness*/
       display:grid;
       grid-template-columns: 100%;
       grid-template-rows: 5% 25% 70%;
@@ -776,6 +764,7 @@ filter: grayscale(100%);
       grid-area: nvdtf;
       margin-left: 0px;
       margin-right:0px;
+      /*sets up nested grid for mobile responsiveness*/
       display:grid;
       grid-template-columns: 100%;  /*divide screen into 5 equal columns*/
       grid-template-rows: 10% 1% 5% .5% 6% 15% 5% 4% 1fr 5%;/*sets height of rows*/
@@ -843,6 +832,32 @@ filter: grayscale(100%);
     #main-analytics{
       grid-area:maina;
       flex-direction: column;
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;  /*divide screen into 4 equal columns*/
+      grid-template-rows: 20% 20% 30% 10% 20% 10%;/*sets height of rows*/
+      grid-template-areas:/*designates areas to certain sections*/
+      'hdt hdt hdt hdt'
+      'title title title title'
+      'drop drop drop drop'
+      'grph grph grph grph'
+      'chn chn chn chn'
+      'fb tw fr go'
+
+    }
+    #pies{
+      display: flex;
+
+      justify-content: space-around;
+      border-left:none;
+      padding-right: 20%;
+      padding-bottom: 5%;
+    }
+    #fb-h, #tw-h, #fr-h, #go-h{
+      padding-top: 8%;
+        padding-bottom: 8%;
+    }
+    .checkbox{
+      padding-bottom: 40%;
     }
     #main-contacts{
       grid-area: mainc;
