@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html><!--starts html-->
 <head><!--starts head section-->
-  <meta charset="UTF-8">
+  <meta charset="UTF-8"><!--meat labels-->
   <meta name="description" content="Project 1 MEJO 487">
   <meta name="keywords" content="MEJO 487, Project 1, HTML, CSS">
   <meta name="author" content="Sivonne Ward">
@@ -10,14 +10,14 @@
   <link rel="stylesheet" href="css/sprites.css" type="text/css"><!--link to css spritesheet-->
 </head><!--closes head section-->
 <body class="site"><!--sets up body of site-->
-  <div id="header-mini">
+  <div id="header-mini"><!--sets up first section of mini label-->
     <span style="cursor:pointer"><h4 id="mini">MINI of Raleigh</h4></span>
     <img class="mini-icons"src="img/mini/spacer.png" alt="Spacing Line">
     <span style="cursor:pointer"><img class="mini-icons"src="img/mini/help.png" alt="Help Button"></span>
-    <img class="mini-icons"src="img/mini/spacer.png" alt="Spacing Line">
-    <span style="cursor:pointer"><img class="mini-icons"src="img/mini/settings.png" alt="Settings Button"></span>
+    <img class="mini-icons"src="img/mini/spacer.png" alt="Spacing Line"><!--help button-->
+    <span style="cursor:pointer"><img class="mini-icons"src="img/mini/settings.png" alt="Settings Button"></span><!--setting button-->
 
-  </div><!--class for mini section-->
+  </div><!--closes class for mini section-->
   <div id="nav-menu"><!--class for nav menu section-->
     <!--sets up 6 sprites for navigation menu-->
     <span style="cursor:pointer"><div class="blue-dashboard"></div></span>
@@ -28,19 +28,21 @@
     <span style="cursor:pointer"><div class="blue-analytics"></div></span>
     <!--div for additional layer for the nav shadows/different color-->
     <div class="blue-layer"></div>
-  </div><!--closes class for nav section-->
-  <div id="dash-to-footer">
-  <div id="nav-dashboard">
+  </div><!--closes class for nav-menu section-->
+  <div id="dash-to-footer"><!--sets up section of dashboard through footer2-->
+  <div id="nav-dashboard"><!--sets up dashboard section-->
     <h1 id="dashwords">Dashboard</h1>
+    <!--sets up searchbar-->
     <div class="search">
       <img id="search-icon"src="img/search/search.png" alt="Search Button">
       <input type="text" img id="searchbox-icon"src="img/search/searchbox.png" alt="Search Button">
     </div>
-  </div><!--class for dashboard section-->
+  </div><!--closes class for dashboard section-->
 
-
-    <div id="nav-announcements">ANNOUNCEMENTS</div><!--class for announcements section-->
-    <div id="nav-announcements-paragraph">Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus</div><!--class for paragraph in announcements section-->
+<div id="nav-announcements"><h11>ANNOUNCEMENTS</h11></div><!--class for announcements section-->
+<div id="nav-announcements-paragraph"><p id="nav-paragraph">
+  Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus</p>
+</div><!--class for paragraph in announcements section-->
     <div id="ann-arrows">
       <a href="#"><img id="left-arrow"src="img/announcements/left-arrow.png" alt="Left Arrow"></a>
       <a href="#"><img id="right-arrow"src="img/announcements/right-arrow.png" alt="Right Arrow"></a>
@@ -50,14 +52,11 @@
       <h2>Tasks</h2>
       <a href="#"><img id="setting"src="img/tasks/settings2.png" alt="Settings"></a>
       </div>
-
       <div id="num1">
       <a href="#"><img src="img/tasks/num1.png" alt="1"></a>
       <h7>Welcome Contacts</h7>
       <img id="count32"src="img/tasks/count32.png" alt="32">
       </div>
-
-
       <div id="num2">
       <a href="#"><img src="img/tasks/num2.png" alt="2"></a>
       <h7>Provide Responses</h7>
@@ -171,8 +170,19 @@
 
     </div><!--class for analytics section-->
     <div id="main-contacts">
-      <a href="#"><img class="contacts-customer"src="img/contacts-customers/contacts.png" alt="Contacts"></a>
-      <a href="#"><img class="contacts-customer"src="img/contacts-customers/customers.png" alt="Customers"></a>
+      <a href="#">
+      <div class="contacts">
+        <img class="chart"src="img/contacts-customers/cont-chart.png" alt="Contacts">
+        <img class="avatar"src="img/contacts-customers/cont-avatar.png" alt="Contacts">
+        <img class="label" src="img/contacts-customers/cont-label.png" alt="Contacts">
+      </div>
+
+      <div class="customers">
+        <img class="chart"src="img/contacts-customers/cust-chart.png" alt="Contacts">
+        <img class="avatar"src="img/contacts-customers/cust-avatar.png" alt="Contacts">
+        <img class="label"src="img/contacts-customers/cust-label.png" alt="Contacts">
+      </div>
+      </a>
     </div><!--class for contacts and customers section-->
 
 

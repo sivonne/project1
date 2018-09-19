@@ -72,7 +72,7 @@
   margin-right:80px;
   display:grid;
   grid-template-columns: 1fr 10% 1fr 1fr 9%;  /*divide screen into 5 equal columns*/
-  grid-template-rows:15% 10% 25% 5% 5% 10% 10% 5%;/*sets height of rows*/
+  grid-template-rows:15% 5% 25% 5% 5% 10% 10% 5%;/*sets height of rows*/
   grid-template-areas:
   'navd navd navd navd navd'
   'nva nvap nvap nvap nvaa'/*announcements (and paragraph) nav*/
@@ -108,7 +108,7 @@ h1{
       position:absolute;
       z-index:2;
       right:115px;
-      top:35%;
+      top:30%;
 }
 #searchbox-icon{
       position:absolute;
@@ -116,7 +116,7 @@ h1{
       width:22%;
       height:5%;
       right:105px;
-      top:34%;
+      top:29%;
 }
 
 
@@ -124,30 +124,34 @@ h1{
 #nav-announcements{/*establishes location in nva, color, outline color and style, text color*/
       grid-area: nva;
       background:#ffffff;
-      color:#fe903f;
-      font-size: 14px;
-      font-family: myriad-pro, sans-serif;
-      color: rgb(254, 127, 19);
-      text-align: left;
       /*margin-left: 80px;*/
       outline-width: thin;
       outline-color:#e6e6e6;
       outline-style:solid;
       padding: 10%;
 }
+h11{
+  font-size: 14px;
+  font-family: myriad-pro, sans-serif;
+  color: rgb(254, 127, 19);
+  text-align: left;
+  color:#fe903f;
+}
 #nav-announcements-paragraph{/*establishes location in nvap, color, outline color and style, text color*/
       grid-area:nvap;
       background:#ffffff;
-      font-size: 14px;
-      font-family: myriad-pro, sans-serif;
-      text-align:left;
-      color: rgb(119, 119, 119);
       outline-style:solid;
       outline-width: thin;
       outline-color:#e6e6e6;
       padding: 2%;
       vertical-align: middle;
       padding-right: 10%;
+}
+#nav-paragraph{
+  font-size: 14px;
+  font-family: myriad-pro, sans-serif;
+  text-align:left;
+  color: rgb(119, 119, 119);
 }
 #ann-arrows{
       grid-area:nvaa;
@@ -551,9 +555,18 @@ h2{
     outline-color:#e6e6e6;
     outline-style:solid;
     display:flex;
-    justify-content: center;
-    align-content: center;
+    
     /*margin-right: 80px;*/
+  }
+
+  .chart{
+    z-index:0;
+  }
+  .avatar{
+    z-index:1;
+  }
+  .label{
+    z-index:2;
   }
   /*section for "did you know?"*/
   #main-did-you-know{/*establishes location in maind, color, outline color and style, text color*/
@@ -841,4 +854,5 @@ https://medium.com/claritydesignsystem/pure-css-accessible-checkboxes-and-radios
 for searchbar: https://www.w3schools.com/howto/howto_css_searchbar.asp
 to change cursor:
 https://www.w3schools.com/css/tryit.asp?filename=trycss_cursor
+for meta tags:https://www.w3schools.com/tags/tag_meta.asp
 */
